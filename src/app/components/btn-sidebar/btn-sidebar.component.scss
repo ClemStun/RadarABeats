@@ -1,0 +1,25 @@
+
+.trigger-btn-side{
+    background: url(https://cdn.discordapp.com/attachments/520318904170709023/938849746146185226/Burger.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+    width: 180px;
+    height: 50px;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    left: 2%;
+    margin-top: 2%;
+    transition: .3s;
+}
+
+.trigger-btn-side:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+#trigger-btn-pre{
+    position: fixed;
+    z-index: 5000;
+}

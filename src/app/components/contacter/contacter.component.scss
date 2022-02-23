@@ -1,0 +1,47 @@
+#contacter{
+    background: #1C1C1C;
+    color: #E5E4E4;
+    position: absolute;
+    z-index: 4000;
+    width: 100%;
+    height: 100%;
+    transition: .3s;
+    overflow: hidden;
+}
+
+.close-btn{
+    background: url(https://cdn.discordapp.com/attachments/520318904170709023/938105617694982154/Cross.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    position: relative;
+    top: 5%;
+    left: 95%;
+    margin-bottom: -1%;
+    padding: 0;
+    transition: .3s;
+}
+
+.close-btn:hover{
+    cursor: pointer;
+}
+
+.titre{
+    color: #CCC610;
+    font-size: 34px;
+    font-weight: 600;
+    text-align: center;
+    margin: 3%;
+}
+
+.contacter-btn{
+    text-align: center;
+}
+
+.p-contacter-btn{
+    font-size: 24px;
+    color: #E5E4E4;
+    background: #333333;
+}

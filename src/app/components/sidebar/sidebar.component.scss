@@ -1,0 +1,78 @@
+
+#sidebar{
+    background: #1C1C1C;
+    background-size: 50%;
+    max-width: 20%;
+    transition: .3s;
+    position: fixed;
+    z-index: 9000;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.active{
+    left: 0;
+    margin-left: 0%;
+}
+
+.inactive{
+    margin-left: -100%;
+}
+
+.rempli{
+    padding: 100% 0;
+}
+
+.close-btn{
+    background: url(https://cdn.discordapp.com/attachments/520318904170709023/938105617694982154/Cross.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    position: relative;
+    margin-top: 2%;
+    left: 88%;
+    margin-bottom: -1%;
+    padding: 0;
+    transition: .3s;
+}
+
+.close-btn:hover{
+    cursor: pointer;
+}
+
+.remplaceClose{
+    background: #44444400;
+    width: 30px;
+    height: 30px;
+}
+
+.logo{
+    width: 40%;
+    margin: 5%;
+    margin-bottom: 20%;
+}
+
+.categorie{
+    width: 100%;
+    font-size: 24px;
+    padding: 5% 0;
+    color: #E5E4E4;
+}
+
+.categorie:hover{
+    cursor: pointer;
+    background-color: #333333;
+    color: #CCC610;
+}
+
+.copyright{
+    color: #444444;
+    position: absolute;
+    text-align: center;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%);
+}

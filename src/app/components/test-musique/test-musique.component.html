@@ -1,0 +1,34 @@
+<div id="menuUp" class="scroll inactive">
+
+    <div id="trigger-btn" class="trigger-btn" (click)="showMenu()">
+    </div>
+
+    <div id="close-btn" class="close-btn invisible" (click)="hideMenu()">
+    </div>
+
+    <h1 class="titre1">{{titre}}</h1>
+    <h3 style="color: #CCC610;">{{artiste}}</h3>
+
+    <div>
+        <a target="_blank" href="{{artisteTwitter}}"><img class="icon" src="https://img.icons8.com/color/48/000000/twitter--v1.png"/></a>
+        <a target="_blank" href="{{artisteInstagram}}"><img class="icon" src="https://img.icons8.com/color/48/000000/instagram-new--v1.png"/></a>
+        <a target="_blank" href="{{artisteSoundcloud}}"><img class="icon" src="https://img.icons8.com/color/48/000000/soundcloud.png"/></a>
+        <a target="_blank" href="{{artisteFacebook}}"><img class="icon" src="https://img.icons8.com/color/48/000000/facebook.png"/></a>
+        <a target="_blank" href="{{artisteDeezer}}"><img class="icon" src="https://img.icons8.com/fluency/48/000000/deezer.png"/></a>
+        <a target="_blank" href="{{artisteSpotify}}"><img class="icon" src="https://img.icons8.com/color/48/000000/spotify--v1.png"/></a>
+        <a target="_blank" href="{{artisteWebsite}}"><img class="icon" src="https://img.icons8.com/ios/50/000000/domain.png"/></a>
+    </div>
+    
+
+    <div class="lecteur">
+        <hr><hr><hr>
+    </div>
+
+
+    <h2>{{ville}}</h2>
+    <h3>({{coordonnees}})</h3>
+
+    <h3 class="aPropos">À Propos</h3>
+    <p class="description">{{artisteDescription}}</p>
+
+</div>

@@ -1,0 +1,128 @@
+/* width */
+::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+.titre1{
+    margin-bottom: -30px;
+    text-transform: uppercase;
+    color: #E5E4E4;
+}
+
+.icon{
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+    margin-top: -35px;
+}
+
+.description{
+    width: 80%;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    color: #E5E4E4;
+    margin-bottom: 3%;
+}
+
+h2{
+    font-size: 32px;
+    font-weight: bold;
+    color: #CCC610;
+    margin-bottom: -1%;
+}
+
+h2.span{
+    font-weight: 200;
+}
+
+h3{
+    color: #CCC610;
+}
+
+.aPropos{
+    color: #E5E4E4;
+    font-weight:600;
+    margin-top: 2%;
+    font-size: 22px;
+}
+
+.lecteur{
+    margin: 3% 0;
+}
+
+.trigger-btn{
+    background: url(https://cdn.discordapp.com/attachments/520318904170709023/938019080412209172/Up.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    left: 49%;
+    top: 2%;
+    transition: .3s;
+}
+
+.trigger-btn:hover{
+    cursor: pointer;
+}
+
+.close-btn{
+    background: url(https://cdn.discordapp.com/attachments/520318904170709023/938105617694982154/Cross.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    position: relative;
+    top: 5%;
+    left: 95%;
+    margin-bottom: -1%;
+    padding: 0;
+    transition: .3s;
+}
+
+.close-btn:hover{
+    cursor: pointer;
+}
+
+#menuUp{
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    background: #1C1C1C;
+    text-align: center;
+    left: 0;
+    transition: .3s;
+    position: fixed;
+    z-index: 2000;
+}
+
+.active{
+    bottom: 0;
+    overflow-y: auto;
+
+}
+
+.inactive{
+    bottom: -73%;
+    overflow: hidden;
+}
