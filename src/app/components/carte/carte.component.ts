@@ -1,6 +1,7 @@
 import { environment } from 'src/environments/environment';
 import { Component, OnInit } from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
+import { CarteService } from 'src/app/services/carte.service';
 
 @Component({
   selector: 'app-carte',
@@ -9,28 +10,11 @@ import * as mapboxgl from 'mapbox-gl';
 })
 export class CarteComponent implements OnInit {
 
-  constructor() { }
+  map!: mapboxgl.Map;
+
+  constructor(private service: CarteService) { }
 
   ngOnInit(): void {
-
-    let mapD = new DisplayMap();
-    let oldMarker = new mapboxgl.Marker().setLngLat(mapD.map.getCenter()).addTo(mapD.map);
-
-    mapD.map.on('click', (e: any) => {
-      console.log(e);
-      oldMarker.remove();
-      oldMarker = new mapboxgl.Marker().setLngLat(e.lngLat).addTo(mapD.map);
-    })
-
-  }
-
-}
-
-class DisplayMap{
-
-  map: mapboxgl.Map;
-
-  constructor(){
 
     this.map = new mapboxgl.Map({
       accessToken: environment.mapbox.token,
@@ -39,6 +23,19 @@ class DisplayMap{
       center: [0.1988608, 48.0076426], // starting position [lng, lat]
       zoom: 9 // starting zoom
     });
+
+    let oldMarker = new mapboxgl.Marker().setLngLat(this.map.getCenter()).addTo(this.map);
+
+    this.map.on('click', (e: any) => {
+
+      //Mis a jour du marker
+      oldMarker.remove();
+      oldMarker = new mapboxgl.Marker().setLngLat(e.lngLat).addTo(this.map);
+
+      //Requete api
+      console.log(this.service.getDistrict(e.lngLat.lng, e.lngLat.lat));
+
+    })
 
   }
 
