@@ -12,6 +12,7 @@ import { DarkerComponent } from './components/darker/darker.component';
 import { CarteComponent } from './components/carte/carte.component';
 import { ContacterComponent } from './components/contacter/contacter.component';
 import { AProposComponent } from './components/apropos/apropos.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { AProposComponent } from './components/apropos/apropos.component';
     AProposComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule
   ],

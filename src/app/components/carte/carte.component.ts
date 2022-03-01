@@ -2,6 +2,8 @@ import { environment } from 'src/environments/environment';
 import { Component, OnInit } from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
 import { CarteService } from 'src/app/services/carte.service';
+import { TestMusiqueComponent } from '../test-musique/test-musique.component';
+import { SongTileServiceService } from 'src/app/services/song-tile-service.service';
 
 @Component({
   selector: 'app-carte',
@@ -12,9 +14,10 @@ export class CarteComponent implements OnInit {
 
   map!: mapboxgl.Map;
 
-  constructor(private service: CarteService) { }
+  constructor(private service: CarteService, private songTileService: SongTileServiceService) { }
 
   ngOnInit(): void {
+    
 
     this.map = new mapboxgl.Map({
       accessToken: environment.mapbox.token,
@@ -33,7 +36,15 @@ export class CarteComponent implements OnInit {
       oldMarker = new mapboxgl.Marker().setLngLat(e.lngLat).addTo(this.map);
 
       //Requete api
-      console.log(this.service.getDistrict(e.lngLat.lng, e.lngLat.lat));
+      console.log(this.service.getPlace(e.lngLat.lng, e.lngLat.lat));
+
+      this.songTileService.setCoord(e.lngLat.lng, e.lngLat.lat);
+      
+      this.service.getPlace(e.lngLat.lng, e.lngLat.lat).then(district => {
+        this.songTileService.ville = district[0];
+        this.songTileService.setArtistAndSong(district[0], district[1], district[2]);
+      })
+      
 
     })
 

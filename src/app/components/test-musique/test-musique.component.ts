@@ -1,6 +1,8 @@
 import { AfterViewInit, Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
 import { Artiste } from '../artiste/artiste.component';
 import { DOCUMENT } from '@angular/common';
+import { CarteService } from 'src/app/services/carte.service';
+import { SongTileServiceService } from 'src/app/services/song-tile-service.service';
 
 @Component({
   selector: 'app-test-musique',
@@ -9,6 +11,13 @@ import { DOCUMENT } from '@angular/common';
 })
 
 export class TestMusiqueComponent implements OnInit {
+
+  constructor(public songTileService: SongTileServiceService, private carteService: CarteService){ 
+    
+  }
+
+  
+
 
   showMenu(){
     console.log("Test ShowMenu");
@@ -49,11 +58,13 @@ export class TestMusiqueComponent implements OnInit {
     //this.artiste = artiste;
   //}
 
-  ngOnInit(): void {
+  ngOnInit() {
 
-    this.titre = "Hypertrophia";
+    this.carteService.setComp(this);
 
-    this.artiste = "Ronteah";
+    this.titre = "NO SONG";
+
+    this.artiste = "NO ARTIST";
 
     this.artisteTwitter = "https://www.twitter.com/ronteahri"
     this.artisteInstagram = "https://www.instagram.com/ronteahri"
@@ -67,6 +78,10 @@ export class TestMusiqueComponent implements OnInit {
   
     this.ville = "Le Mans";
     this.coordonnees = "48.00679639723815, 0.19642185178061575";
+
+    
+
   }
 
 }
+
