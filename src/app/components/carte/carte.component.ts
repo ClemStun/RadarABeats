@@ -38,6 +38,7 @@ export class CarteComponent implements OnInit {
       console.log("Geopos non accepté placement au Mans !");
     })
 
+    this.map.setCenter(oldMarker.getLngLat());
 
     this.map.on('click', (e: any) => {
 
