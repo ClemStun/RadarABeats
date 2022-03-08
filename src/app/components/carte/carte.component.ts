@@ -29,6 +29,16 @@ export class CarteComponent implements OnInit {
 
     let oldMarker = new mapboxgl.Marker().setLngLat(this.map.getCenter()).addTo(this.map);
 
+    const geo = navigator.geolocation;
+    geo.getCurrentPosition((pos: any) =>{
+      console.log(pos);
+      oldMarker.remove();
+      oldMarker = new mapboxgl.Marker().setLngLat([pos.coords.longitude, pos.coords.latitude]).addTo(this.map);
+    }, () => {
+      console.log("Geopos non accepté placement au Mans !");
+    })
+
+
     this.map.on('click', (e: any) => {
 
       //Mis a jour du marker
