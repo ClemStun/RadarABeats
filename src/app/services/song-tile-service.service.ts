@@ -112,7 +112,7 @@ export class SongTileServiceService {
 
     if (this.artiste != "NO ARTIST"){
       await this.getLinkFromArtistAndSong(this.artiste, this.titre  == "NO SONG" ? "" : this.titre).then(data => {
-        this.videoLink = 'http://www.youtube.com/watch?v=' + data["items"][0]["id"]["videoId"];
+        this.videoLink = 'http://www.youtube.com/embed/' + data["items"][0]["id"]["videoId"] + "?&autoplay=1";
         console.log(data)})
       console.log(this.videoLink);
     }
