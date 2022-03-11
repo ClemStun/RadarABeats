@@ -54,9 +54,10 @@ export class CarteComponent implements OnInit {
 
       this.songTileService.setCoord(e.lngLat.lng, e.lngLat.lat);
       
-      this.service.getPlace(e.lngLat.lng, e.lngLat.lat).then(district => {
+      this.service.getPlace(e.lngLat.lng, e.lngLat.lat).then(async district => {
         this.songTileService.ville = district[0];
-        this.songTileService.setArtistAndSong(district[0], district[1], district[2]);
+        await this.songTileService.setArtistAndSong(district[0], district[1], district[2]);
+        this.songTileService.setVideoLink();
       })
       
 

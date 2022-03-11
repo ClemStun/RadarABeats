@@ -11,6 +11,7 @@ export class SongTileServiceService {
   count: number = 0
   ville: string = "NO CITY"
   coordonnees: string = "0, 0"
+  videoLink: string =  ""
 
   constructor(private http:HttpClient) { }
 
@@ -107,8 +108,18 @@ export class SongTileServiceService {
       
   }
 
+  async setVideoLink(){
+
+    if (this.artiste != "NO ARTIST"){
+      await this.getLinkFromArtistAndSong(this.artiste, this.titre  == "NO SONG" ? "" : this.titre).then(data => {
+        this.videoLink = 'http://www.youtube.com/watch?v=' + data["items"][0]["id"]["videoId"];
+        console.log(data)})
+      console.log(this.videoLink);
+    }
+  }
+
   getLinkFromArtistAndSong(artist: string, song: string){
-    this.http.get<any>('https://www.googleapis.com/youtube/v3/search', {responseType: "json"}).toPromise();
+    return this.http.get<any>('https://www.googleapis.com/youtube/v3/search/?q="' + artist + ' ' + song + '"&type=video&part=snippet&key=AIzaSyCYrC2A4cNmuO3U_3w-QP2bGJNRIfMNcog', {responseType: "json"}).toPromise();
     
   }
 
