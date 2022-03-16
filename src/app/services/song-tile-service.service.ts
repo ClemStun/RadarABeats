@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { environment } from "src/environments/environment";
 @Injectable({
   providedIn: 'root'
 })
@@ -12,6 +12,8 @@ export class SongTileServiceService {
   ville: string = "NO CITY"
   coordonnees: string = "0, 0"
   videoLink: string =  ""
+  artisteID: string = ""
+  description: string = ""
 
   constructor(private http:HttpClient) { }
 
@@ -68,7 +70,11 @@ export class SongTileServiceService {
             this.artiste = "NO ARTIST";
             this.titre = "NO SONG";
           }else{
-            await this.getRandomArtists(country, this.count).then(data => this.artiste = data["artists"][0]["name"]);
+            await this.getRandomArtists(country, this.count).then(data => {
+              this.artiste = data["artists"][0]["name"];
+              this.artisteID = data["artists"][0]["id"];
+              this.description = data["artists"][0]["disambiguation"];
+            });
             this.ville = country;
             await this.getNumberOfSongs(this.artiste).then(data => this.count = data["count"]);
             if(this.count == 0){
@@ -78,7 +84,11 @@ export class SongTileServiceService {
             }
           }
         }else{
-          await this.getRandomArtists(district, this.count).then(data => this.artiste = data["artists"][0]["name"]);
+          await this.getRandomArtists(district, this.count).then(data => {
+            this.artiste = data["artists"][0]["name"];
+            this.artisteID = data["artists"][0]["id"];
+            this.description = data["artists"][0]["disambiguation"];
+          });
           this.ville = district;
           await this.getNumberOfSongs(this.artiste).then(data => this.count = data["count"]);
           if(this.count == 0){
@@ -90,7 +100,11 @@ export class SongTileServiceService {
 
 
       }else{
-        await this.getRandomArtists(city, this.count).then(data => this.artiste = data["artists"][0]["name"]);
+        await this.getRandomArtists(city, this.count).then(data => {
+          this.artiste = data["artists"][0]["name"];
+          this.artisteID = data["artists"][0]["id"];
+          this.description = data["artists"][0]["disambiguation"];
+        });
         console.log("Artist : " + this.artiste);
         this.ville = city;
 
@@ -119,7 +133,7 @@ export class SongTileServiceService {
   }
 
   getLinkFromArtistAndSong(artist: string, song: string){
-    return this.http.get<any>('https://www.googleapis.com/youtube/v3/search/?q="' + artist + ' ' + song + '"&type=video&part=snippet&key=AIzaSyCYrC2A4cNmuO3U_3w-QP2bGJNRIfMNcog', {responseType: "json"}).toPromise();
+    return this.http.get<any>('https://www.googleapis.com/youtube/v3/search/?q="' + artist + ' ' + song + '"&type=video&part=snippet&key=' + environment.youtube.token, {responseType: "json"}).toPromise();
     
   }
 

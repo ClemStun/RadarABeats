@@ -21,13 +21,8 @@
     <h3 class="artiste">{{songTileService.artiste}}</h3>
 
     <div>
-        <a target="_blank" href="{{artisteTwitter}}"><img class="icon" src="https://cdn.discordapp.com/attachments/520318904170709023/948147216856522762/icon-twitter-hov.png"/></a>
-        <a target="_blank" href="{{artisteInstagram}}"><img class="icon" src="https://cdn.discordapp.com/attachments/520318904170709023/948149358195531776/icon-instagram-hov1.png"/></a>
-        <a target="_blank" href="{{artisteSoundcloud}}"><img class="icon" src="https://cdn.discordapp.com/attachments/520318904170709023/948146624381730866/icon-soundcloud.png"/></a>
-        <a target="_blank" href="{{artisteFacebook}}"><img class="icon" src="https://cdn.discordapp.com/attachments/520318904170709023/948146624142671902/icon-facebook.png"/></a>
-        <a target="_blank" href="{{artisteDeezer}}"><img class="icon" src="https://cdn.discordapp.com/attachments/520318904170709023/948146813049909268/icon-deezer.png"/></a>
-        <a target="_blank" href="{{artisteSpotify}}"><img class="icon" src="https://cdn.discordapp.com/attachments/520318904170709023/948146623916167218/icon-spotify.png"/></a>
-        <a target="_blank" href="{{artisteWebsite}}"><img class="icon" src="https://cdn.discordapp.com/attachments/520318904170709023/948146623324753930/icon-website.png"/></a>
+        <a target="_blank" href="https://musicbrainz.org/artist/{{songTileService.artisteID}}"><img class="icon" src="https://cdn.discordapp.com/attachments/382597109167161344/953648198126284911/icon-musicbrainz.png"/></a>
+    
     </div>
     
     <div class="lecteur"> 
@@ -40,6 +35,6 @@
     <h3>({{songTileService.coordonnees}})</h3>
 
     <h3 class="aPropos">À Propos</h3>
-    <p class="description">{{artisteDescription}}</p>
+    <p class="description">{{songTileService.description}}</p>
 
 </div>
