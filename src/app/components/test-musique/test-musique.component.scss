@@ -19,6 +19,7 @@
   }
 
 .titre1{
+    margin-top: 3.2%;
     margin-bottom: -30px;
     text-transform: uppercase;
     color: #E5E4E4;
@@ -29,6 +30,13 @@
     height: 25px;
     margin: 5px;
     margin-top: -35px;
+    opacity: .5;
+    transition: .2s;
+}
+
+.icon:hover{
+    opacity: 1;
+    cursor: pointer;
 }
 
 .description{
@@ -50,6 +58,10 @@ h2{
 
 h2.span{
     font-weight: 200;
+}
+
+.artiste{
+    color: #CCC610;
 }
 
 h3{
@@ -77,7 +89,7 @@ h3{
     position: relative;
     align-items: center;
     left: 49%;
-    top: 2%;
+    top: 3%;
     transition: .3s;
 }
 
@@ -93,21 +105,92 @@ h3{
     height: 35px;
     text-align: center;
     position: relative;
-    top: 5%;
     left: 95%;
     margin-bottom: -1%;
     padding: 0;
+    position: absolute;
+    position: fixed;
     transition: .3s;
+}
+
+.close-btn-active{
+    top: 61%;
+}
+
+.close-btn-inactive{
+    top: 100%;
+}
+
+.close-btn-greater{
+    top: 23%;
 }
 
 .close-btn:hover{
     cursor: pointer;
 }
 
+
+.lower-btn{
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    position: relative;
+    left: 92%;
+    margin-bottom: -1%;
+    top: 23%;
+    padding: 0;
+    transition: .3s;
+    position: fixed;
+    transition: .3s;
+}
+
+.lower-btn:hover{
+    cursor: pointer;
+}
+
+.greater-btn{
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    position: relative;
+    left: 92%;
+    margin-bottom: -1%;
+    padding: 0;
+    transition: .3s;
+    position: fixed;
+}
+
+.greater-btn-img-active{
+    background: url(https://cdn.discordapp.com/attachments/520318904170709023/938019079955042314/Down.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.greater-btn-img-inactive{
+    background: url(https://cdn.discordapp.com/attachments/520318904170709023/938019080412209172/Up.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.greater-btn-greater{
+    top: 23%;
+}
+
+.greater-btn-active{
+    top: 61%;
+}
+
+.greater-btn-inactive{
+    top: 100%;
+}
+
+.greater-btn:hover{
+    cursor: pointer;
+}
+
 #menuUp{
     position: absolute;
     width: 100%;
-    height: 80%;
     background: #1C1C1C;
     text-align: center;
     left: 0;
@@ -119,10 +202,194 @@ h3{
 .active{
     bottom: 0;
     overflow-y: auto;
-
+    height: 43%;
 }
 
 .inactive{
-    bottom: -73%;
+    bottom: -36%;
     overflow: hidden;
+    height: 43%;
+}
+
+.greater{
+    height: 80%;
+}
+
+@media screen and (max-width: 415px) {
+
+    .titre1{
+        margin-bottom: -35px;
+        text-transform: uppercase;
+        color: #E5E4E4;
+        font-size: 32px;
+    }
+
+    .icon{
+        width: 15px;
+        height: 15px;
+        margin: 5px;
+        margin-top: -35px;
+    }
+
+    h2{
+        font-size: 24px;
+        font-weight: bold;
+        color: #CCC610;
+        margin-bottom: -6%;
+    }
+    
+    h2.span{
+        font-weight: 200;
+    }
+
+    .artiste{
+        font-size: 18px;
+        color: #CCC610;
+    }
+    
+    h3{
+        color: #CCC610;
+        font-size: 12px;
+    }
+
+    .description{
+        width: 80%;
+        text-align: center;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+        color: #E5E4E4;
+        margin-bottom: 3%;
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .aPropos{
+        color: #E5E4E4;
+        font-weight:600;
+        margin-top: 3%;
+        margin-bottom: -1%;
+        font-size: 22px;
+    }
+
+    .trigger-btn{
+        background: url(https://cdn.discordapp.com/attachments/520318904170709023/938019080412209172/Up.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 35px;
+        height: 35px;
+        text-align: center;
+        position: relative;
+        align-items: center;
+        left: 50%;
+        transform: translate(-50%);
+        top: 2%;
+        transition: .3s;
+    }
+
+    .close-btn{
+        background: url(https://cdn.discordapp.com/attachments/520318904170709023/938019079955042314/Down.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 35px;
+        height: 35px;
+        text-align: center;
+        position: relative;
+        top: 3%;
+        left: 50%;
+        transform: translate(-50%);
+        margin-bottom: -1%;
+        padding: 0;
+        transition: .3s;
+    }
+
+}
+
+@media screen and (max-width: 1440px) {
+    .titre1{
+        margin-bottom: -35px;
+        margin-top: 2%;
+        text-transform: uppercase;
+        color: #E5E4E4;
+        font-size: 38px;
+    }
+
+    .icon{
+        width: 20px;
+        height: 20px;
+        margin: 5px;
+        margin-top: -35px;
+    }
+
+    h2{
+        font-size: 24px;
+        font-weight: bold;
+        color: #CCC610;
+        margin-bottom: -2%;
+    }
+    
+    h2.span{
+        font-weight: 200;
+    }
+
+    .artiste{
+        font-size: 24px;
+        color: #CCC610;
+    }
+    
+    h3{
+        color: #CCC610;
+        font-size: 18px;
+    }
+
+    .description{
+        width: 80%;
+        text-align: center;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+        color: #E5E4E4;
+        margin-bottom: 3%;
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    .aPropos{
+        color: #E5E4E4;
+        font-weight:600;
+        margin-top: 3%;
+        margin-bottom: -.5%;
+        font-size: 22px;
+    }
+
+    .trigger-btn{
+        background: url(https://cdn.discordapp.com/attachments/520318904170709023/938019080412209172/Up.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 35px;
+        height: 35px;
+        text-align: center;
+        position: relative;
+        align-items: center;
+        left: 50%;
+        transform: translate(-50%);
+        top: 2%;
+        transition: .3s;
+    }
+
+    .close-btn{
+        background: url(https://cdn.discordapp.com/attachments/520318904170709023/938019079955042314/Down.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 35px;
+        height: 35px;
+        text-align: center;
+        position: relative;
+        top: 3%;
+        left: 50%;
+        transform: translate(-50%);
+        margin-bottom: -1%;
+        padding: 0;
+        transition: .3s;
+    }
 }

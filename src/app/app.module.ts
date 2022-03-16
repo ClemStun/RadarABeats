@@ -13,6 +13,7 @@ import { CarteComponent } from './components/carte/carte.component';
 import { ContacterComponent } from './components/contacter/contacter.component';
 import { AProposComponent } from './components/apropos/apropos.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SafePipe } from './safe.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     DarkerComponent,
     CarteComponent,
     ContacterComponent,
-    AProposComponent
+    AProposComponent,
+    SafePipe
   ],
   imports: [
     HttpClientModule,

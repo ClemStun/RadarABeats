@@ -14,6 +14,15 @@ export class AProposComponent implements OnInit {
     (<HTMLInputElement>document.getElementById('btn-apropos')).classList.remove('text-selected');
   }
 
+  hideAProposMobile(){
+    console.log("Test HideAProposMobile");
+    (<HTMLInputElement>document.getElementById('apropos')).classList.remove('active-categorie');
+    (<HTMLInputElement>document.getElementById('apropos')).classList.add('inactive-categorie');
+    (<HTMLInputElement>document.getElementById('btn-apropos')).classList.remove('text-selected');
+    (<HTMLInputElement>document.getElementById('sidebar')).classList.remove('inactive');
+    (<HTMLInputElement>document.getElementById('sidebar')).classList.add('active');
+  }
+
   constructor() { }
 
   ngOnInit(): void {

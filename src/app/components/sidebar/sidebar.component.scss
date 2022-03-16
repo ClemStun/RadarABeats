@@ -5,7 +5,7 @@
     max-width: 20%;
     transition: .3s;
     position: fixed;
-    z-index: 9000;
+    z-index: 8000;
     align-items: center;
     text-align: center;
     overflow: hidden;
@@ -25,22 +25,7 @@
 }
 
 .close-btn{
-    background: url(https://cdn.discordapp.com/attachments/520318904170709023/938105617694982154/Cross.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    position: relative;
-    margin-top: 2%;
-    left: 88%;
-    margin-bottom: -1%;
-    padding: 0;
-    transition: .3s;
-}
-
-.close-btn:hover{
-    cursor: pointer;
+    display: none;
 }
 
 .remplaceClose{
@@ -68,11 +53,144 @@
     color: #CCC610;
 }
 
+.categorie-mobile{
+    display: none;
+    visibility: hidden;
+}
+
 .copyright{
     color: #444444;
     position: absolute;
     text-align: center;
-    top: 75%;
+    top: 72%;
     left: 50%;
     transform: translate(-50%);
+}
+
+.mailto{
+    text-decoration: none;
+    color: #A91917;
+    width: 100%;
+    font-size: 24px;
+    padding: 5% 0;
+}
+
+@media screen and (max-width: 415px) {
+    .close-btn{
+        background: url(https://cdn.discordapp.com/attachments/520318904170709023/938105617694982154/Cross.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        position: relative;
+        margin: 8% 0;
+        left: 50%;
+        transform: translate(-50%);
+        margin-bottom: -1%;
+        padding: 0;
+        transition: .3s;
+        display: block;
+    }
+
+    .close-btn:hover{
+        cursor: pointer;
+    }
+
+    .remplaceClose{
+        display: none;
+    }
+
+    #sidebar{
+        background: #1C1C1C;
+        background-size: 50%;
+        max-width: 100%;
+        transition: .3s;
+        position: fixed;
+        z-index: 9000;
+        align-items: center;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .logo{
+        width: 40%;
+        margin: 5%;
+        margin: 20%;
+    }
+
+    .copyright{
+        color: #444444;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .categorie{
+        display: none;
+        visibility: hidden;
+    }
+
+    .categorie-mobile{
+        width: 100%;
+        font-size: 24px;
+        padding: 5% 0;
+        color: #E5E4E4;
+        display: block;
+        visibility: visible;
+    }
+    
+    .categorie-mobile:hover{
+        cursor: pointer;
+        background-color: #333333;
+        color: #CCC610;
+    }
+}
+
+@media screen and (min-width: 930px) and (max-width: 1440px) {
+    #sidebar{
+        background: #1C1C1C;
+        background-size: 50%;
+        max-width: 25%;
+        transition: .3s;
+        position: fixed;
+        z-index: 8000;
+        align-items: center;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .copyright{
+        color: #444444;
+        position: absolute;
+        text-align: center;
+        bottom: 60%;
+        left: 50%;
+        transform: translate(-50%);
+    }
+}
+
+@media screen and (min-width: 415px) and (max-width: 930px) {
+    #sidebar{
+        background: #1C1C1C;
+        background-size: 50%;
+        max-width: 35%;
+        transition: .3s;
+        position: fixed;
+        z-index: 8000;
+        align-items: center;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .copyright{
+        color: #444444;
+        position: absolute;
+        text-align: center;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%);
+    }
 }

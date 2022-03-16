@@ -1,27 +1,38 @@
 <div id="menuUp" class="scroll inactive">
 
+    <img src="https://cdn.discordapp.com/attachments/520318904170709023/938019079955042314/Down.png" style="display:none" alt="icon lower">
+
     <div id="trigger-btn" class="trigger-btn" (click)="showMenu()">
     </div>
 
-    <div id="close-btn" class="close-btn invisible" (click)="hideMenu()">
+    <div id="greater-btn" class="greater-btn greater-btn-inactive greater-btn-img-inactive" (click)="greaterMenu()">
+    </div>
+
+    <div id="lower-btn" class="lower-btn invisible greater-btn-img-active" (click)="lowerMenu()">
+    </div>
+
+    <div id="close-btn" class="close-btn invisible close-btn-inactive" (click)="hideMenu()">
+    </div>
+
+    <div id="greater-btn" class="greater-btn invisible" (click)="hideMenu()">
     </div>
 
     <h1 class="titre1">{{songTileService.titre}}</h1>
-    <h3 style="color: #CCC610;">{{songTileService.artiste}}</h3>
+    <h3 class="artiste">{{songTileService.artiste}}</h3>
 
     <div>
-        <a target="_blank" href="{{artisteTwitter}}"><img class="icon" src="https://img.icons8.com/color/48/000000/twitter--v1.png"/></a>
-        <a target="_blank" href="{{artisteInstagram}}"><img class="icon" src="https://img.icons8.com/color/48/000000/instagram-new--v1.png"/></a>
-        <a target="_blank" href="{{artisteSoundcloud}}"><img class="icon" src="https://img.icons8.com/color/48/000000/soundcloud.png"/></a>
-        <a target="_blank" href="{{artisteFacebook}}"><img class="icon" src="https://img.icons8.com/color/48/000000/facebook.png"/></a>
-        <a target="_blank" href="{{artisteDeezer}}"><img class="icon" src="https://img.icons8.com/fluency/48/000000/deezer.png"/></a>
-        <a target="_blank" href="{{artisteSpotify}}"><img class="icon" src="https://img.icons8.com/color/48/000000/spotify--v1.png"/></a>
-        <a target="_blank" href="{{artisteWebsite}}"><img class="icon" src="https://img.icons8.com/ios/50/000000/domain.png"/></a>
+        <a target="_blank" href="{{artisteTwitter}}"><img class="icon" src="https://cdn.discordapp.com/attachments/520318904170709023/948147216856522762/icon-twitter-hov.png"/></a>
+        <a target="_blank" href="{{artisteInstagram}}"><img class="icon" src="https://cdn.discordapp.com/attachments/520318904170709023/948149358195531776/icon-instagram-hov1.png"/></a>
+        <a target="_blank" href="{{artisteSoundcloud}}"><img class="icon" src="https://cdn.discordapp.com/attachments/520318904170709023/948146624381730866/icon-soundcloud.png"/></a>
+        <a target="_blank" href="{{artisteFacebook}}"><img class="icon" src="https://cdn.discordapp.com/attachments/520318904170709023/948146624142671902/icon-facebook.png"/></a>
+        <a target="_blank" href="{{artisteDeezer}}"><img class="icon" src="https://cdn.discordapp.com/attachments/520318904170709023/948146813049909268/icon-deezer.png"/></a>
+        <a target="_blank" href="{{artisteSpotify}}"><img class="icon" src="https://cdn.discordapp.com/attachments/520318904170709023/948146623916167218/icon-spotify.png"/></a>
+        <a target="_blank" href="{{artisteWebsite}}"><img class="icon" src="https://cdn.discordapp.com/attachments/520318904170709023/948146623324753930/icon-website.png"/></a>
     </div>
     
-
-    <div class="lecteur">
-        <hr><hr><hr>
+    <div class="lecteur"> 
+        <iframe id="videoPlayer" width="420" height="315" [src]="songTileService.videoLink | safe">
+        </iframe> 
     </div>
 
 

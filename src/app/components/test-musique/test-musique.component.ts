@@ -11,13 +11,10 @@ import { SongTileServiceService } from 'src/app/services/song-tile-service.servi
 })
 
 export class TestMusiqueComponent implements OnInit {
-
+  
   constructor(public songTileService: SongTileServiceService, private carteService: CarteService){ 
     
   }
-
-  
-
 
   showMenu(){
     console.log("Test ShowMenu");
@@ -25,6 +22,14 @@ export class TestMusiqueComponent implements OnInit {
     (<HTMLInputElement>document.getElementById('menuUp')).classList.add('active');
     (<HTMLInputElement>document.getElementById('trigger-btn')).classList.add('invisible');
     (<HTMLInputElement>document.getElementById('close-btn')).classList.remove('invisible');
+    (<HTMLInputElement>document.getElementById('greater-btn')).classList.remove('invisible');
+
+    setTimeout(() => {
+      (<HTMLInputElement>document.getElementById('close-btn')).classList.remove('close-btn-inactive');
+      (<HTMLInputElement>document.getElementById('close-btn')).classList.add('close-btn-active');
+      (<HTMLInputElement>document.getElementById('greater-btn')).classList.remove('greater-btn-inactive');
+      (<HTMLInputElement>document.getElementById('greater-btn')).classList.add('greater-btn-active');
+    }, 30);
   }
 
   hideMenu(){
@@ -33,6 +38,60 @@ export class TestMusiqueComponent implements OnInit {
     (<HTMLInputElement>document.getElementById('menuUp')).classList.add('inactive');
     (<HTMLInputElement>document.getElementById('close-btn')).classList.add('invisible');
     (<HTMLInputElement>document.getElementById('trigger-btn')).classList.remove('invisible');
+    (<HTMLInputElement>document.getElementById('greater-btn')).classList.add('invisible');
+
+    if((<HTMLInputElement>document.getElementById('menuUp')).classList.contains('greater')){
+      (<HTMLInputElement>document.getElementById('menuUp')).classList.remove('greater');
+      this.lowerMenu();
+    }
+
+    setTimeout(() => {
+      (<HTMLInputElement>document.getElementById('close-btn')).classList.remove('close-btn-active');
+      (<HTMLInputElement>document.getElementById('close-btn')).classList.add('close-btn-inactive');
+      (<HTMLInputElement>document.getElementById('greater-btn')).classList.remove('greater-btn-active');
+      (<HTMLInputElement>document.getElementById('greater-btn')).classList.add('greater-btn-inactive');
+      
+    }, 30);
+  }
+
+  greaterMenu(){
+    (<HTMLInputElement>document.getElementById('menuUp')).classList.add('greater');
+    (<HTMLInputElement>document.getElementById('close-btn')).classList.remove('close-btn-active');
+    (<HTMLInputElement>document.getElementById('close-btn')).classList.add('close-btn-greater');
+    (<HTMLInputElement>document.getElementById('greater-btn')).classList.remove('greater-btn-img-inactive');
+    (<HTMLInputElement>document.getElementById('greater-btn')).classList.add('greater-btn-img-active');
+    (<HTMLInputElement>document.getElementById('lower-btn')).classList.remove('greater-btn-img-inactive');
+    (<HTMLInputElement>document.getElementById('lower-btn')).classList.add('greater-btn-img-active');
+
+    (<HTMLInputElement>document.getElementById('greater-btn')).classList.remove('greater-btn-active');
+    (<HTMLInputElement>document.getElementById('greater-btn')).classList.add('greater-btn-greater');
+    (<HTMLInputElement>document.getElementById('lower-btn')).classList.remove('greater-btn-active');
+    (<HTMLInputElement>document.getElementById('lower-btn')).classList.add('greater-btn-greater');
+    
+    setTimeout(() => {
+      (<HTMLInputElement>document.getElementById('lower-btn')).classList.remove('invisible');
+      (<HTMLInputElement>document.getElementById('greater-btn')).classList.add('invisible');
+    }, 300);
+  }
+
+  lowerMenu(){
+    (<HTMLInputElement>document.getElementById('menuUp')).classList.remove('greater');
+    (<HTMLInputElement>document.getElementById('close-btn')).classList.remove('close-btn-greater');
+    (<HTMLInputElement>document.getElementById('close-btn')).classList.add('close-btn-active');
+    (<HTMLInputElement>document.getElementById('greater-btn')).classList.remove('greater-btn-img-active');
+    (<HTMLInputElement>document.getElementById('greater-btn')).classList.add('greater-btn-img-inactive');
+    (<HTMLInputElement>document.getElementById('lower-btn')).classList.remove('greater-btn-img-active');
+    (<HTMLInputElement>document.getElementById('lower-btn')).classList.add('greater-btn-img-inactive');
+
+    (<HTMLInputElement>document.getElementById('greater-btn')).classList.remove('greater-btn-greater');
+    (<HTMLInputElement>document.getElementById('greater-btn')).classList.add('greater-btn-active');
+    (<HTMLInputElement>document.getElementById('lower-btn')).classList.remove('greater-btn-greater');
+    (<HTMLInputElement>document.getElementById('lower-btn')).classList.add('greater-btn-active');
+
+    setTimeout(() => {
+      (<HTMLInputElement>document.getElementById('lower-btn')).classList.add('invisible');
+      (<HTMLInputElement>document.getElementById('greater-btn')).classList.remove('invisible');
+     }, 300);
   }
 
   titre!: string;
@@ -58,14 +117,15 @@ export class TestMusiqueComponent implements OnInit {
     //this.artiste = artiste;
   //}
 
-  ngOnInit() {
+  ngOnInit(): void {
+
 
     this.carteService.setComp(this);
 
     this.titre = "NO SONG";
 
     this.artiste = "NO ARTIST";
-
+    
     this.artisteTwitter = "https://www.twitter.com/ronteahri"
     this.artisteInstagram = "https://www.instagram.com/ronteahri"
     this.artisteSoundcloud = "https://www.soundcloud.com/ronteah-rth"
@@ -78,10 +138,6 @@ export class TestMusiqueComponent implements OnInit {
   
     this.ville = "Le Mans";
     this.coordonnees = "48.00679639723815, 0.19642185178061575";
-
-    
-
   }
 
 }
-

@@ -1,3 +1,4 @@
+
 #apropos{
     background: #1C1C1C;
     color: #E5E4E4;
@@ -24,6 +25,10 @@
     transition: .3s;
 }
 
+.close-btn-mobile{
+    display: none;
+}
+
 .close-btn:hover{
     cursor: pointer;
 }
@@ -32,6 +37,267 @@
     color: #CCC610;
     font-size: 34px;
     font-weight: 600;
-    text-align: center;
     margin: 3%;
+    margin-left: 23%;
+    margin-bottom: -.5%;
+}
+
+.titre1{
+    color: #E5E4E4;
+    font-size: 28px;
+    font-weight: 600;
+    margin: 3%;
+    margin-left: 23%;
+    margin-bottom: -.5%;
+}
+
+.pp{
+    width: 150px;
+    height: 150px;
+    margin-left: 50%;
+    transform: translate(-51%);
+}
+
+.louis{
+    background: url(https://cdn.discordapp.com/attachments/520318904170709023/948197446662651924/Louis.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.romain{
+    background: url(https://cdn.discordapp.com/attachments/520318904170709023/948197447283400744/Romain.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.nathan{
+    background: url(https://cdn.discordapp.com/attachments/520318904170709023/948197447006552064/Nathan.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.clement{
+    background: url(https://cdn.discordapp.com/attachments/520318904170709023/948197446226440202/Clement.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container-box{
+    width: 17%;
+    height: 52vh;
+    margin: 1%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.container-desc{
+    max-width: 90%;
+    margin-left: 5%;
+}
+
+.equipe{
+    margin-left: 10%;
+}
+
+span{
+    color: #A91917;
+}
+
+.description{
+    max-width: 70%;
+    margin-left: 23%;
+}
+
+hr{
+    background: #666;
+    max-width: 35%;
+    height: 1.5px;
+    margin-left: 23%;
+    border: none;
+}
+
+.container-nom{
+    color: #E5E4E4;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.box-reseaux{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin: 10% 2%;
+}
+
+.container-box .instagram{
+    background: url(../../../img/icon-instagram.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container-box .instagram:hover{
+    background: url(../../../img/icon-instagram-hov1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container-box .twitter{
+    background: url(../../../img/icon-twitter.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container-box .twitter:hover{
+    background: url(../../../img/icon-twitter-hov.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container-box .linkedin{
+    background: url(../../../img/icon-linkedin.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container-box .linkedin:hover{
+    background: url(../../../img/icon-linkedin-hov.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container-reseaux{
+    align-items: center;
+    text-align: center;
+}
+
+.recentre{
+    margin-left: 0;
+    margin-top: 0;
+}
+
+
+@media screen and (max-width: 415px) {
+    #apropos{
+        background: #1C1C1C;
+        color: #E5E4E4;
+        position: absolute;
+        z-index: 9000;
+        width: 100%;
+        height: 100%;
+        transition: .3s;
+        overflow: auto;
+        overflow-x: hidden;
+        display: block;
+    }
+    
+    .close-btn{
+        display: none;
+    }
+    
+    .close-btn-mobile{
+        background: url(https://cdn.discordapp.com/attachments/520318904170709023/938105617694982154/Cross.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 35px;
+        height: 35px;
+        text-align: center;
+        position: relative;
+        top: 5%;
+        left: 50%;
+        transform: translate(-50%);
+        margin-bottom: 15%;
+        padding: 0;
+        transition: .3s;
+        display: block;
+    }
+
+    .close-btn-mobile:hover{
+        cursor: pointer;
+    }
+
+    .titre{
+        color: #CCC610;
+        font-size: 28px;
+        font-weight: 600;
+        margin: 3% 0;
+        margin-left: 0;
+        text-align: center;
+        margin-bottom: -.5%;
+    }
+    
+    .titre1{
+        color: #E5E4E4;
+        font-size: 24px;
+        font-weight: 600;
+        margin: 7% 0;
+        margin-left: 0;
+        text-align: center;
+        margin-bottom: -.5%;
+        margin-top: 10%;
+    }
+
+    p{
+        font-size: 12px;
+        line-height: 18px;
+        text-align: center;
+        text-justify: auto;
+        width: 100%;
+    }
+
+    .description{
+        margin-left: 50%;
+        transform: translate(-50%);
+    }
+
+    hr{
+        background: #666;
+        max-width: 35%;
+        height: 1.5px;
+        margin-left: 50%;
+        transform: translate(-50%);
+        border: none;
+    }
+        
+    .pp{
+        width: 100px;
+        height: 100px;
+        margin-left: 50%;
+    }
+
+    .equipe{
+       display: inline-table;
+       margin-left: 22%;
+    }
+
+    .container-box{
+        width: 55%;
+        height: 42vh;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        
+    }
+}
+
+@media screen and (min-width: 415px) and (max-width: 1440px) {
+    #apropos{
+        background: #1C1C1C;
+        color: #E5E4E4;
+        position: absolute;
+        z-index: 9000;
+        width: 100%;
+        height: 100%;
+        transition: .3s;
+        overflow: auto;
+        overflow-x: hidden;
+        display: block;
+    }
+
+    .recentre{
+        margin-left: -25%;
+        margin-top: 3%;
+    }
 }

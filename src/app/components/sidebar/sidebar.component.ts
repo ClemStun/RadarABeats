@@ -29,6 +29,23 @@ export class SidebarComponent implements OnInit {
     (<HTMLInputElement>document.getElementById('btn-contacter')).classList.add('text-selected');
   }
 
+  showContacterMobile(){
+    if((<HTMLInputElement>document.getElementById('apropos')).classList.contains('active-categorie')){
+      (<HTMLInputElement>document.getElementById('apropos')).classList.remove('active-categorie');
+      (<HTMLInputElement>document.getElementById('apropos')).classList.add('inactive-categorie');
+      (<HTMLInputElement>document.getElementById('btn-apropos')).classList.remove('text-selected');
+    }
+
+    (<HTMLInputElement>document.getElementById('contacter')).classList.remove('inactive-categorie');
+    (<HTMLInputElement>document.getElementById('contacter')).classList.add('active-categorie');
+    (<HTMLInputElement>document.getElementById('btn-contacter')).classList.add('text-selected');
+
+    (<HTMLInputElement>document.getElementById('sidebar')).classList.remove('active');
+    (<HTMLInputElement>document.getElementById('sidebar')).classList.add('inactive');
+  }
+
+
+
   showAPropos(){
     if((<HTMLInputElement>document.getElementById('contacter')).classList.contains('active-categorie')){
       (<HTMLInputElement>document.getElementById('contacter')).classList.remove('active-categorie');
@@ -39,6 +56,21 @@ export class SidebarComponent implements OnInit {
     (<HTMLInputElement>document.getElementById('apropos')).classList.remove('inactive-categorie');
     (<HTMLInputElement>document.getElementById('apropos')).classList.add('active-categorie');
     (<HTMLInputElement>document.getElementById('btn-apropos')).classList.add('text-selected');
+  }
+
+  showAProposMobile(){
+    if((<HTMLInputElement>document.getElementById('contacter')).classList.contains('active-categorie')){
+      (<HTMLInputElement>document.getElementById('contacter')).classList.remove('active-categorie');
+      (<HTMLInputElement>document.getElementById('contacter')).classList.add('inactive-categorie');
+      (<HTMLInputElement>document.getElementById('btn-contacter')).classList.remove('text-selected');
+    }
+
+    (<HTMLInputElement>document.getElementById('apropos')).classList.remove('inactive-categorie');
+    (<HTMLInputElement>document.getElementById('apropos')).classList.add('active-categorie');
+    (<HTMLInputElement>document.getElementById('btn-apropos')).classList.add('text-selected');
+    
+    (<HTMLInputElement>document.getElementById('sidebar')).classList.remove('active');
+    (<HTMLInputElement>document.getElementById('sidebar')).classList.add('inactive');
   }
 
   constructor() { }
