@@ -29,7 +29,7 @@ export class SongTileServiceService {
 
 
     console.log("Inside");
-    return this.http.get<any>('http://musicbrainz.org/ws/2/artist/?query=area:\"'+ city +'\"&limit=1&fmt=json', {responseType: "json"}).toPromise();
+    return this.http.get<any>('https://musicbrainz.org/ws/2/artist/?query=area:\"'+ city +'\"&limit=1&fmt=json', {responseType: "json"}).toPromise();
 
   }
 
@@ -37,18 +37,18 @@ export class SongTileServiceService {
     
     let offset = this.getRandomOffset(count);
 
-    return this.http.get<any>('http://musicbrainz.org/ws/2/artist/?query=area:\"'+ city +'\"&limit=1&offset='+ offset +'&fmt=json', {responseType: "json"}).toPromise();
+    return this.http.get<any>('https://musicbrainz.org/ws/2/artist/?query=area:\"'+ city +'\"&limit=1&offset='+ offset +'&fmt=json', {responseType: "json"}).toPromise();
   }
 
   getNumberOfSongs(artist: string){
-    return this.http.get<any>('http://musicbrainz.org/ws/2/recording/?query=artist:\"'+ artist +'\"&limit=1&fmt=json', {responseType: "json"}).toPromise();
+    return this.http.get<any>('https://musicbrainz.org/ws/2/recording/?query=artist:\"'+ artist +'\"&limit=1&fmt=json', {responseType: "json"}).toPromise();
   }
 
   getRandomSong(artist: string, count: number): Promise<any>{
     
     let offset = this.getRandomOffset(count);
 
-    return this.http.get<any>('http://musicbrainz.org/ws/2/recording/?query=artist:\"'+ artist +'\"&limit=1&offset='+ offset +'&fmt=json', {responseType: "json"}).toPromise();
+    return this.http.get<any>('https://musicbrainz.org/ws/2/recording/?query=artist:\"'+ artist +'\"&limit=1&offset='+ offset +'&fmt=json', {responseType: "json"}).toPromise();
   }
 
   async setArtistAndSong(city: string, district: string, country: string) {
@@ -126,7 +126,7 @@ export class SongTileServiceService {
 
     if (this.artiste != "NO ARTIST"){
       await this.getLinkFromArtistAndSong(this.artiste, this.titre  == "NO SONG" ? "" : this.titre).then(data => {
-        this.videoLink = 'http://www.youtube.com/embed/' + data["items"][0]["id"]["videoId"] + "?&autoplay=1";
+        this.videoLink = 'https://www.youtube.com/embed/' + data["items"][0]["id"]["videoId"] + "?&autoplay=1";
         console.log(data)})
       console.log(this.videoLink);
     }
