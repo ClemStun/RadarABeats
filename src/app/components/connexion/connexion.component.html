@@ -1,0 +1,26 @@
+<div id="log-window"class="unactive-log">
+
+    <div id="selection">
+        <span id="background-selec" class="choix-left"></span>
+        <span id="btn-con" class="choix" (click)="setConnexion(true)">Connexion</span>
+        <span id="btn-ins" class="choix" (click)="setConnexion(false)">S'inscrire</span>
+    </div>
+
+    <form id="connexion-form" class="form-c choix-connexion active-choix">
+
+        <input type="text" placeholder="E-mail">
+        <input type="password" placeholder="Mot de passe">
+        <input type="submit" value="Valider" (click)="connexion()">
+
+    </form>
+
+    <form id="enregistrer-form" class="form-c choix-inscription">
+
+        <input type="text" placeholder="E-mail">
+        <input type="password" placeholder="Mot de passe">
+        <input type="password" placeholder="Confirmation mot de passe">
+        <input type="submit" value="Valider" (click)="inscription()">
+
+    </form>
+
+</div>
