@@ -13,8 +13,10 @@ export class SongTileServiceService {
   coordonnees: string = "0, 0"
   videoLink: string =  ""
 
+  //Injection du service http pour les appelles aux API
   constructor(private http:HttpClient) { }
 
+  //Retourne une valeur aléatoire en fonction du nombre d'artiste ou de musiques trouvées
   getRandomOffset(count: number){
     return Math.floor(Math.random() * count);
   }
@@ -23,6 +25,7 @@ export class SongTileServiceService {
     this.coordonnees = lon + ", " + lat;
   }
 
+  //Retourne une promise contenant le nombre d'artiste à un lieu donné
   getNumberOfArtists(city: string): Promise<any>{
 
 
@@ -31,6 +34,7 @@ export class SongTileServiceService {
 
   }
 
+  //Retourne une promise contenant un artiste aléatoire à un lieu donné
   getRandomArtists(city: string, count: number): Promise<any>{
     
     let offset = this.getRandomOffset(count);
@@ -38,10 +42,14 @@ export class SongTileServiceService {
     return this.http.get<any>('http://musicbrainz.org/ws/2/artist/?query=area:\"'+ city +'\"&limit=1&offset='+ offset +'&fmt=json', {responseType: "json"}).toPromise();
   }
 
+
+  //Retourne une promise contenant le nombre de musique pour un artiste donné
   getNumberOfSongs(artist: string){
     return this.http.get<any>('http://musicbrainz.org/ws/2/recording/?query=artist:\"'+ artist +'\"&limit=1&fmt=json', {responseType: "json"}).toPromise();
   }
 
+
+  //Retourne une promise contenant une musique aléatoire pour un artiste donné
   getRandomSong(artist: string, count: number): Promise<any>{
     
     let offset = this.getRandomOffset(count);
@@ -49,6 +57,7 @@ export class SongTileServiceService {
     return this.http.get<any>('http://musicbrainz.org/ws/2/recording/?query=artist:\"'+ artist +'\"&limit=1&offset='+ offset +'&fmt=json', {responseType: "json"}).toPromise();
   }
 
+  //Fonction principale qui extrait les données des promises
   async setArtistAndSong(city: string, district: string, country: string) {
     console.log("Before");
       //TRY CITY
@@ -108,6 +117,7 @@ export class SongTileServiceService {
       
   }
 
+  //Affichage de la vidéo correspondante à la musique
   async setVideoLink(){
 
     if (this.artiste != "NO ARTIST"){
@@ -118,6 +128,8 @@ export class SongTileServiceService {
     }
   }
 
+
+  //Récuperation de la vidéo correspondante à la musique trouvée 
   getLinkFromArtistAndSong(artist: string, song: string){
     return this.http.get<any>('https://www.googleapis.com/youtube/v3/search/?q="' + artist + ' ' + song + '"&type=video&part=snippet&key=AIzaSyCYrC2A4cNmuO3U_3w-QP2bGJNRIfMNcog', {responseType: "json"}).toPromise();
     

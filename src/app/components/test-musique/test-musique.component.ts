@@ -1,5 +1,4 @@
 import { AfterViewInit, Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
-import { Artiste } from '../artiste/artiste.component';
 import { DOCUMENT } from '@angular/common';
 import { CarteService } from 'src/app/services/carte.service';
 import { SongTileServiceService } from 'src/app/services/song-tile-service.service';
@@ -16,6 +15,7 @@ export class TestMusiqueComponent implements OnInit {
     
   }
 
+  //Fonction d'affichage de la version reduite du menu vertical
   showMenu(){
     console.log("Test ShowMenu");
 
@@ -63,6 +63,7 @@ export class TestMusiqueComponent implements OnInit {
     }, 30);
   }
 
+  //Fonction d'affichage de la version complète du menu vertical
   greaterMenu(){
     (<HTMLInputElement>document.getElementById('menuUp')).classList.add('greater');
     (<HTMLInputElement>document.getElementById('close-btn')).classList.remove('close-btn-active');
@@ -83,6 +84,7 @@ export class TestMusiqueComponent implements OnInit {
     }, 300);
   }
 
+  //Fonction de passage entre la version reduite du menu et la version complète
   lowerMenu(){
     (<HTMLInputElement>document.getElementById('menuUp')).classList.remove('greater');
     (<HTMLInputElement>document.getElementById('close-btn')).classList.remove('close-btn-greater');
@@ -103,50 +105,12 @@ export class TestMusiqueComponent implements OnInit {
      }, 300);
   }
 
-  titre!: string;
-
-  //artiste:Artiste;
-  artiste!:string;
-
-  artisteTwitter!: string;
-  artisteInstagram!: string;
-  artisteSoundcloud!: string;
-  artisteFacebook!: string;
-  artisteDeezer!: string;
-  artisteSpotify!: string;
-  artisteWebsite!: string;
-
-  artisteDescription!: string;
-
-  ville!: string;
-  coordonnees!: string;
-
-
-  //constructor(artiste:Artiste){
-    //this.artiste = artiste;
-  //}
 
   ngOnInit(): void {
 
-
+    //Passe le composant au service de la carte pour l'affichage du menu apres un clique sur la carte
     this.carteService.setComp(this);
 
-    this.titre = "NO SONG";
-
-    this.artiste = "NO ARTIST";
-    
-    this.artisteTwitter = "https://www.twitter.com/ronteahri"
-    this.artisteInstagram = "https://www.instagram.com/ronteahri"
-    this.artisteSoundcloud = "https://www.soundcloud.com/ronteah-rth"
-    this.artisteFacebook = "https://www.facebook.com"
-    this.artisteDeezer = "https://www.deezer.com"
-    this.artisteSpotify = "https://www.spotify.com"
-    this.artisteWebsite = "https://www.utema.fr/portfolio/louis"
-
-    this.artisteDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis pharetra risus. Aliquam ornare suscipit sem ac mollis. Phasellus fermentum lobortis mi non mattis. Praesent odio tellus, lacinia quis volutpat ac, hendrerit vitae velit. Vestibulum vestibulum maximus lorem sit amet aliquam. Sed pharetra, purus id accumsan vehicula, ipsum lorem rhoncus nibh, et ultrices nulla leo id neque. Nam ac luctus sem, eu viverra nisi. Nulla porttitor dui at libero molestie facilisis. Cras a tellus augue. Pellentesque tincidunt consequat congue. Maecenas et porttitor eros. Nam sed tellus nibh. Nullam placerat eu sem vitae pellentesque. Phasellus efficitur, urna ac posuere fringilla, turpis justo suscipit erat, in pharetra dui ante a lorem. Morbi porta orci blandit massa malesuada, vitae imperdiet dui vulputate. Sed dignissim, risus quis consectetur pellentesque, nisi quam lobortis eros, in porttitor odio quam nec libero. Vivamus finibus, elit eget tempor laoreet, purus dolor mattis mi, ut dignissim mi mauris et risus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis pharetra risus. Aliquam ornare suscipit sem ac mollis. Phasellus fermentum lobortis mi non mattis. Praesent odio tellus, lacinia quis volutpat ac, hendrerit vitae velit. Vestibulum vestibulum maximus lorem sit amet aliquam. Sed pharetra, purus id accumsan vehicula, ipsum lorem rhoncus nibh, et ultrices nulla leo id neque. Nam ac luctus sem, eu viverra nisi. Nulla porttitor dui at libero molestie facilisis. Cras a tellus augue. Pellentesque tincidunt consequat congue. Maecenas et porttitor eros. Nam sed tellus nibh. Nullam placerat eu sem vitae pellentesque. Phasellus efficitur, urna ac posuere fringilla, turpis justo suscipit erat, in pharetra dui ante a lorem. Morbi porta orci blandit massa malesuada, vitae imperdiet dui vulputate. Sed dignissim, risus quis consectetur pellentesque, nisi quam lobortis eros, in porttitor odio quam nec libero. Vivamus finibus, elit eget tempor laoreet, purus dolor mattis mi, ut dignissim mi mauris et risus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis pharetra risus. Aliquam ornare suscipit sem ac mollis. Phasellus fermentum lobortis mi non mattis. Praesent odio tellus, lacinia quis volutpat ac, hendrerit vitae velit. Vestibulum vestibulum maximus lorem sit amet aliquam. Sed pharetra, purus id accumsan vehicula, ipsum lorem rhoncus nibh, et ultrices nulla leo id neque. Nam ac luctus sem, eu viverra nisi. Nulla porttitor dui at libero molestie facilisis. Cras a tellus augue. Pellentesque tincidunt consequat congue. Maecenas et porttitor eros. Nam sed tellus nibh. Nullam placerat eu sem vitae pellentesque. Phasellus efficitur, urna ac posuere fringilla, turpis justo suscipit erat, in pharetra dui ante a lorem. Morbi porta orci blandit massa malesuada, vitae imperdiet dui vulputate. Sed dignissim, risus quis consectetur pellentesque, nisi quam lobortis eros, in porttitor odio quam nec libero. Vivamus finibus, elit eget tempor laoreet, purus dolor mattis mi, ut dignissim mi mauris et risus."
-  
-    this.ville = "Le Mans";
-    this.coordonnees = "48.00679639723815, 0.19642185178061575";
   }
 
 }
