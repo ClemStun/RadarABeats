@@ -14,14 +14,10 @@ export class TestMusiqueComponent implements OnInit {
   constructor(public songTileService: SongTileServiceService, private carteService: CarteService){ 
     
   }
+
   //Fonction d'affichage de la version reduite du menu vertical
   showMenu(){
     console.log("Test ShowMenu");
-
-    if((<HTMLInputElement>document.getElementById('menuUp')).classList.contains('greater')){
-      this.lowerMenu();
-    }
-
     (<HTMLInputElement>document.getElementById('menuUp')).classList.remove('inactive');
     (<HTMLInputElement>document.getElementById('menuUp')).classList.add('active');
     (<HTMLInputElement>document.getElementById('trigger-btn')).classList.add('invisible');
@@ -38,10 +34,6 @@ export class TestMusiqueComponent implements OnInit {
 
   hideMenu(){
     console.log("Test HideMenu");
-    (<HTMLInputElement>document.getElementById('menuUp')).scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
     (<HTMLInputElement>document.getElementById('menuUp')).classList.remove('active');
     (<HTMLInputElement>document.getElementById('menuUp')).classList.add('inactive');
     (<HTMLInputElement>document.getElementById('close-btn')).classList.add('invisible');
