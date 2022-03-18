@@ -3,7 +3,6 @@
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 5000;
     width: 40%;
     height: 50%;
     background-color: #1c1c1c;
@@ -15,11 +14,13 @@
 }
 
 .unactive-log{
+    z-index: -1;
     opacity: 0;
     top: 80%;
 }
 
 .active-log{
+    z-index: 5000;
     top: 50%;
 }
 
@@ -91,7 +92,7 @@ input:focus{
     outline: none;
 }
 
-input[type="submit"]{
+input[type="button"]{
 
     all: unset;
     width: 75%;
