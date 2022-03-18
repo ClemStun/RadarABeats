@@ -1,0 +1,140 @@
+#log-window{
+    
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5000;
+    width: 40%;
+    height: 50%;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    color: #e5e4e4;
+    overflow: hidden;
+    transition: .3s;
+
+}
+
+.unactive-log{
+    opacity: 0;
+    top: 80%;
+}
+
+.active-log{
+    top: 50%;
+}
+
+#selection{
+
+    position: relative;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #333333;
+    cursor: pointer;
+
+}
+
+.choix{
+
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#btn-con{
+
+    top: 0;
+    left: 0;
+
+}
+
+#btn-ins{
+
+    top: 0;
+    left: 50%;
+
+}
+
+.form-c{
+
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90%;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: .3s;
+
+}
+
+input[type="text"], input[type="password"]{
+
+    border-radius: 0px;
+    color: #e5e4e4;
+    border: none;
+    border-bottom: 1px solid #CCC610;
+    background-color: rgba($color: #ffffff, $alpha: 0);
+    width: 75%;
+    height: 50px;
+    font-size: 18px;
+
+}
+
+input:focus{
+    outline: none;
+}
+
+input[type="submit"]{
+
+    all: unset;
+    width: 75%;
+    height: 50px;
+    background-color: rgba($color: #ffffff, $alpha: 0);
+    border-radius: 5px;
+    border: 1px solid #CCC610;
+    color: #e5e4e4;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+.choix-connexion{
+    left: -100%;
+}
+
+.choix-inscription{
+    left: 100%;
+}
+
+.active-choix{
+
+    left: 0%;
+
+}
+
+#background-selec{
+
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    background-color: #1c1c1c;
+    transition: .3s;
+
+}
+
+.choix-right{
+    left: 50%;
+}
+
+.choix-left{
+    left: 0;
+}

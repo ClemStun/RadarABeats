@@ -12,6 +12,8 @@ import { ContacterComponent } from './components/contacter/contacter.component';
 import { AProposComponent } from './components/apropos/apropos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SafePipe } from './safe.pipe';
+import { BtnConnexionComponent } from './components/btn-connexion/btn-connexion.component';
+import { ConnexionComponent } from './components/connexion/connexion.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { SafePipe } from './safe.pipe';
     CarteComponent,
     ContacterComponent,
     AProposComponent,
-    SafePipe
+    SafePipe,
+    BtnConnexionComponent,
+    ConnexionComponent
   ],
   imports: [
     HttpClientModule,
