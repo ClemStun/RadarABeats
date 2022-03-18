@@ -13,7 +13,7 @@ export class SongTileServiceService {
   coordonnees: string = "0, 0"
   videoLink: string =  ""
   artisteID: string = ""
-  description: string = ""
+  description: string = "Cet arstiste n'a pas de description !"
 
   //Injection du service http pour les appelles aux API
   constructor(private http:HttpClient) { }
