@@ -18,6 +18,11 @@ export class TestMusiqueComponent implements OnInit {
 
   showMenu(){
     console.log("Test ShowMenu");
+
+    if((<HTMLInputElement>document.getElementById('menuUp')).classList.contains('greater')){
+      this.lowerMenu();
+    }
+
     (<HTMLInputElement>document.getElementById('menuUp')).classList.remove('inactive');
     (<HTMLInputElement>document.getElementById('menuUp')).classList.add('active');
     (<HTMLInputElement>document.getElementById('trigger-btn')).classList.add('invisible');
@@ -34,6 +39,10 @@ export class TestMusiqueComponent implements OnInit {
 
   hideMenu(){
     console.log("Test HideMenu");
+    (<HTMLInputElement>document.getElementById('menuUp')).scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
     (<HTMLInputElement>document.getElementById('menuUp')).classList.remove('active');
     (<HTMLInputElement>document.getElementById('menuUp')).classList.add('inactive');
     (<HTMLInputElement>document.getElementById('close-btn')).classList.add('invisible');
@@ -132,6 +141,7 @@ export class TestMusiqueComponent implements OnInit {
     this.artisteFacebook = "https://www.facebook.com"
     this.artisteDeezer = "https://www.deezer.com"
     this.artisteSpotify = "https://www.spotify.com"
+    this.artisteWebsite = "https://www.utema.fr/portfolio/louis"
 
     this.artisteDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis pharetra risus. Aliquam ornare suscipit sem ac mollis. Phasellus fermentum lobortis mi non mattis. Praesent odio tellus, lacinia quis volutpat ac, hendrerit vitae velit. Vestibulum vestibulum maximus lorem sit amet aliquam. Sed pharetra, purus id accumsan vehicula, ipsum lorem rhoncus nibh, et ultrices nulla leo id neque. Nam ac luctus sem, eu viverra nisi. Nulla porttitor dui at libero molestie facilisis. Cras a tellus augue. Pellentesque tincidunt consequat congue. Maecenas et porttitor eros. Nam sed tellus nibh. Nullam placerat eu sem vitae pellentesque. Phasellus efficitur, urna ac posuere fringilla, turpis justo suscipit erat, in pharetra dui ante a lorem. Morbi porta orci blandit massa malesuada, vitae imperdiet dui vulputate. Sed dignissim, risus quis consectetur pellentesque, nisi quam lobortis eros, in porttitor odio quam nec libero. Vivamus finibus, elit eget tempor laoreet, purus dolor mattis mi, ut dignissim mi mauris et risus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis pharetra risus. Aliquam ornare suscipit sem ac mollis. Phasellus fermentum lobortis mi non mattis. Praesent odio tellus, lacinia quis volutpat ac, hendrerit vitae velit. Vestibulum vestibulum maximus lorem sit amet aliquam. Sed pharetra, purus id accumsan vehicula, ipsum lorem rhoncus nibh, et ultrices nulla leo id neque. Nam ac luctus sem, eu viverra nisi. Nulla porttitor dui at libero molestie facilisis. Cras a tellus augue. Pellentesque tincidunt consequat congue. Maecenas et porttitor eros. Nam sed tellus nibh. Nullam placerat eu sem vitae pellentesque. Phasellus efficitur, urna ac posuere fringilla, turpis justo suscipit erat, in pharetra dui ante a lorem. Morbi porta orci blandit massa malesuada, vitae imperdiet dui vulputate. Sed dignissim, risus quis consectetur pellentesque, nisi quam lobortis eros, in porttitor odio quam nec libero. Vivamus finibus, elit eget tempor laoreet, purus dolor mattis mi, ut dignissim mi mauris et risus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis pharetra risus. Aliquam ornare suscipit sem ac mollis. Phasellus fermentum lobortis mi non mattis. Praesent odio tellus, lacinia quis volutpat ac, hendrerit vitae velit. Vestibulum vestibulum maximus lorem sit amet aliquam. Sed pharetra, purus id accumsan vehicula, ipsum lorem rhoncus nibh, et ultrices nulla leo id neque. Nam ac luctus sem, eu viverra nisi. Nulla porttitor dui at libero molestie facilisis. Cras a tellus augue. Pellentesque tincidunt consequat congue. Maecenas et porttitor eros. Nam sed tellus nibh. Nullam placerat eu sem vitae pellentesque. Phasellus efficitur, urna ac posuere fringilla, turpis justo suscipit erat, in pharetra dui ante a lorem. Morbi porta orci blandit massa malesuada, vitae imperdiet dui vulputate. Sed dignissim, risus quis consectetur pellentesque, nisi quam lobortis eros, in porttitor odio quam nec libero. Vivamus finibus, elit eget tempor laoreet, purus dolor mattis mi, ut dignissim mi mauris et risus."
   
