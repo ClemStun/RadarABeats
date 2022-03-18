@@ -39,10 +39,7 @@ export class TestMusiqueComponent implements OnInit {
 
   hideMenu(){
     console.log("Test HideMenu");
-    (<HTMLInputElement>document.getElementById('menuUp')).scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    (<HTMLInputElement>document.getElementById('menuUp')).scroll(0,-1000);
     (<HTMLInputElement>document.getElementById('menuUp')).classList.remove('active');
     (<HTMLInputElement>document.getElementById('menuUp')).classList.add('inactive');
     (<HTMLInputElement>document.getElementById('close-btn')).classList.add('invisible');
