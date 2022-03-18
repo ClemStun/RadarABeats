@@ -60,6 +60,7 @@ export class CarteService {
 
   musicTileComp: any
 
+  //Setter
   setComp(comp: any){
     this.musicTileComp = comp;
   }
