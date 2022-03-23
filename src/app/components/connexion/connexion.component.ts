@@ -33,7 +33,12 @@ export class ConnexionComponent implements OnInit {
   }
 
   inscription(){
-    
+    /*
+    let mail = (<HTMLInputElement>document.getElementById("mail-ins")).value;
+    let pw = (<HTMLInputElement>document.getElementById("pw-ins")).value;
+    let pwc = (<HTMLInputElement>document.getElementById("pwc-ins")).value;
+    */
+   
   }
 
 }
