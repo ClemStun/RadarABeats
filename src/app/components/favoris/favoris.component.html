@@ -6,10 +6,18 @@
         </div>
 
         <div class="titre">FAVORIS</div>
-        
-        <app-favoris-card></app-favoris-card>
-        <app-favoris-card></app-favoris-card>
-        <app-favoris-card></app-favoris-card>
+
+        <div class="card-container" *ngFor="let fav of favorisListe">
+
+            <div class="info">
+                <span class="title">{{ fav.title }}</span>
+                <span class="artiste">{{ fav.artiste }}</span>
+            </div>
+            <div class="video">
+                <iframe src="{{ fav.link }}" frameborder="0">video youtube</iframe>
+            </div>
+
+        </div>
 
     </div>
 </div>

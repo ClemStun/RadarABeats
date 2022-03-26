@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as sjcl from 'sjcl';
+import { ConnexionService } from 'src/app/services/connexion.service';
+import { FavorisService } from 'src/app/services/favoris.service';
 
 @Component({
   selector: 'app-connexion',
@@ -11,7 +13,7 @@ export class ConnexionComponent implements OnInit {
 
   url: string;
 
-  constructor(private http:HttpClient) { 
+  constructor(private http:HttpClient, private connexionService: ConnexionService, private _favoris: FavorisService) { 
     this.url = "http://localhost:8080/";
   }
 
@@ -52,7 +54,8 @@ export class ConnexionComponent implements OnInit {
 
       if(res.connexion == true){
 
-        
+        this.connexionService.setLogin(pseudo);
+        this._favoris.getFavoris();
 
       }else{
         this.printError("error-con", res.message);
