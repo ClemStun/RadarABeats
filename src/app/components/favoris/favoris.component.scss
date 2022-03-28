@@ -153,6 +153,12 @@
     align-items: center;
 }
 
+.video iframe{
+    position: relative;
+    color: white;
+    z-index: 10000;
+}
+
 .title{
     font-size: 30px;;
     color: #A91917;
