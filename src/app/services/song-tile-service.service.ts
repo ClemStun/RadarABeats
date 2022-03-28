@@ -82,7 +82,7 @@ export class SongTileServiceService {
             await this.getRandomArtists(country, this.count).then(data => {
               this.artiste = data["artists"][0]["name"];
               this.artisteID = data["artists"][0]["id"];
-              this.description = data["artists"][0]["disambiguation"] == null ? "Cet arstiste n'a pas de description !" : data["artists"][0]["disambiguation"];
+              this.description = data["artists"][0]["disambiguation"] == null ? "Cet artiste n'a pas de description !" : data["artists"][0]["disambiguation"];
             });
             this.ville = country;
             await this.getNumberOfSongs(this.artiste).then(data => this.count = data["count"]);
