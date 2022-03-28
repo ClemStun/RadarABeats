@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { ConnexionService } from 'src/app/services/connexion.service';
+import { Component, OnInit } from '@angular/core'
 import { FavorisService } from 'src/app/services/favoris.service';
 
 @Component({
@@ -11,15 +9,9 @@ import { FavorisService } from 'src/app/services/favoris.service';
 
 export class FavorisComponent implements OnInit {
 
-  favorisListe: any[] = [];
+  constructor(public _favoris: FavorisService) { }
 
-  constructor(private http: HttpClient, private _favoris: FavorisService) { }
-
-  ngOnInit(): void {
-
-    this._favoris.setFavComp(this);
-
-  }
+  ngOnInit(): void { }
 
   hideFavoris(){
     (<HTMLInputElement>document.getElementById('favoris')).classList.remove('active-categorie');
@@ -34,9 +26,5 @@ export class FavorisComponent implements OnInit {
     (<HTMLInputElement>document.getElementById('sidebar')).classList.remove('inactive');
     (<HTMLInputElement>document.getElementById('sidebar')).classList.add('active');
   }
-
-  setFavListe(res: any){
-    this.favorisListe = res;
-  }
-
+  
 }

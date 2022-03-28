@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import * as sjcl from 'sjcl';
 import { ConnexionService } from 'src/app/services/connexion.service';
 import { FavorisService } from 'src/app/services/favoris.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-connexion',
@@ -11,11 +12,7 @@ import { FavorisService } from 'src/app/services/favoris.service';
 })
 export class ConnexionComponent implements OnInit {
 
-  url: string;
-
-  constructor(private http:HttpClient, private connexionService: ConnexionService, private _favoris: FavorisService) { 
-    this.url = "http://localhost:8080/";
-  }
+  constructor(private http:HttpClient, private connexionService: ConnexionService, private _favoris: FavorisService) { }
 
   ngOnInit(): void {
   }
@@ -50,7 +47,7 @@ export class ConnexionComponent implements OnInit {
     const pwch = sjcl.codec.hex.fromBits(pwh);
 
     //Envoie de la requete d'inscription
-    this.http.get(this.url + "login?login=" + pseudo + "&pw=" + pwch, {responseType: "json"}).toPromise().then((res :any) => {
+    this.http.get(environment.database.url + "login?login=" + pseudo + "&pw=" + pwch, {responseType: "json"}).toPromise().then((res :any) => {
 
       if(res.connexion == true){
 
@@ -76,6 +73,11 @@ export class ConnexionComponent implements OnInit {
     let pseudo = (<HTMLInputElement>document.getElementById("pseudo-ins")).value;
     let pw = (<HTMLInputElement>document.getElementById("pw-ins")).value;
     let pwc = (<HTMLInputElement>document.getElementById("pwc-ins")).value;
+
+    if(pseudo.match(/\s/) != null || pseudo == ""){
+      this.printError("error-ins", "Login incorrect");
+      return;
+    }
     
     //Check match des mot de passes
     if(pw == pwc){
@@ -85,7 +87,7 @@ export class ConnexionComponent implements OnInit {
       const pwch = sjcl.codec.hex.fromBits(pwh);
 
       //Envoie de la requete d'inscription
-      this.http.get(this.url + "register?login=" + pseudo + "&pw=" + pwch, {responseType: "json"}).toPromise().then((res: any) => {
+      this.http.get(environment.database.url + "register?login=" + pseudo + "&pw=" + pwch, {responseType: "json"}).toPromise().then((res: any) => {
 
         //Si l'inscription a réussi
         if(res.register == true){
@@ -104,7 +106,7 @@ export class ConnexionComponent implements OnInit {
     }
     
     this.resetDisplay();
-
+    
   }
 
   /**

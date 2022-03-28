@@ -1,7 +1,7 @@
-import { AfterViewInit, Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Component, OnInit } from '@angular/core'
 import { CarteService } from 'src/app/services/carte.service';
 import { SongTileServiceService } from 'src/app/services/song-tile-service.service';
+import { FavorisService } from 'src/app/services/favoris.service';
 
 @Component({
   selector: 'app-test-musique',
@@ -11,7 +11,7 @@ import { SongTileServiceService } from 'src/app/services/song-tile-service.servi
 
 export class TestMusiqueComponent implements OnInit {
   
-  constructor(public songTileService: SongTileServiceService, private carteService: CarteService){ 
+  constructor(public songTileService: SongTileServiceService, private carteService: CarteService, public _favoris: FavorisService){ 
     
   }
 
