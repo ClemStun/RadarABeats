@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ConnexionService } from './connexion.service';
 import { environment } from 'src/environments/environment';
+import { ArrayType } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -48,9 +49,7 @@ export class FavorisService {
     if(login == "") return;
 
     //Le son est déjà dans les favoris de l'utilisteur
-    if(this.favorisListe.find(song => {
-      song.title == title && song.artiste == artiste && song.link == link
-    }) != null) return;
+    if(this.isFavoris(title, artiste)) return; //TODO: Enlever des favoris
 
     await this.http.get(environment.database.url + "favorisadd?login=" + login + "&title=" + title + "&artiste=" + artiste + "&link=" + link, {responseType: "json"}).toPromise().then((res: any) => {
 
@@ -60,6 +59,23 @@ export class FavorisService {
     }).catch((e: any) => {
       console.log(e);
     })
+
+  }
+
+  /**
+   * Test si une musique est déjà en favoris
+   * 
+   * @param title titre de la musique
+   * @param artiste artiste de la musique
+   * @returns vrai si le son est déjà en favoris
+   */
+  isFavoris(title: string, artiste: string){
+
+    if(this.favorisListe.find(song => {
+      return song.title == title && song.artiste == artiste
+    }) != null) return true;
+
+    return false;
 
   }
 
