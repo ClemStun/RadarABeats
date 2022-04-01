@@ -16,6 +16,7 @@ import { BtnConnexionComponent } from './components/btn-connexion/btn-connexion.
 import { ConnexionComponent } from './components/connexion/connexion.component';
 import { FavorisComponent } from './components/favoris/favoris.component';
 import { PopUpComponent } from './components/pop-up/pop-up.component';
+import { PopupComponent } from './components/popup/popup.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { PopUpComponent } from './components/pop-up/pop-up.component';
     BtnConnexionComponent,
     ConnexionComponent,
     FavorisComponent,
-    PopUpComponent
+    PopUpComponent,
+    PopupComponent
   ],
   imports: [
     HttpClientModule,

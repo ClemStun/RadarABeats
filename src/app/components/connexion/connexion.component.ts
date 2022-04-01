@@ -36,11 +36,11 @@ export class ConnexionComponent implements OnInit {
   /**
    * Lance la connexion de l'utilisatueur
    */
-  connexion(){
+  connexion(pseudo: string = "", pw: string = ""){
 
     //Récupération des informations de connexion
-    let pseudo = (<HTMLInputElement>document.getElementById("pseudo-con")).value;
-    let pw = (<HTMLInputElement>document.getElementById("pw-con")).value;
+    if(pseudo == "") pseudo = (<HTMLInputElement>document.getElementById("pseudo-con")).value;
+    if(pw == "") pw = (<HTMLInputElement>document.getElementById("pw-con")).value;
 
     //Chiffrage mot de passe
     const pwh = sjcl.hash.sha256.hash(pw);
@@ -54,6 +54,7 @@ export class ConnexionComponent implements OnInit {
         this.connexionService.setLogin(pseudo);
         this._favoris.getFavoris();
         (<HTMLInputElement>document.getElementById("condec")).innerHTML = "Deconnexion";
+        this.popUp();
 
       }else{
         this.printError("error-con", res.message);
@@ -93,7 +94,7 @@ export class ConnexionComponent implements OnInit {
         //Si l'inscription a réussi
         if(res.register == true){
 
-          //Peut etre faire un affichage ou connecter automatiquement !
+          this.connexion(pseudo, pw)
 
         }else{
           this.printError("error-ins", res.message);
@@ -123,6 +124,14 @@ export class ConnexionComponent implements OnInit {
     (<HTMLInputElement>document.getElementById(id)).classList.remove('inactive-err');
     (<HTMLInputElement>document.getElementById(id)).classList.add('active-err');
 
+  }
+
+  /**
+   * 
+   */
+  popUp(){
+    (<HTMLInputElement>document.getElementById('popup')).classList.remove('inactive-pop');
+    (<HTMLInputElement>document.getElementById('popup')).classList.add('active-pop');
   }
 
   /**

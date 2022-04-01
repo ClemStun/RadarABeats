@@ -16,6 +16,7 @@
             <div class="info">
                 <span class="title">{{ fav.title }}</span>
                 <span class="artiste">{{ fav.artiste }}</span>
+                <span class="retirer" (click)="_favoris.removeFavoris(fav.title, fav.artiste)">Retirer des favoris</span>
             </div>
             <div class="video"> 
                 <iframe id="videoPlayer" width="420" height="315" [src]="fav.link  | safe">

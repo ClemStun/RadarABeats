@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ConnexionService } from './connexion.service';
 import { environment } from 'src/environments/environment';
-import { ArrayType } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -49,9 +48,36 @@ export class FavorisService {
     if(login == "") return;
 
     //Le son est déjà dans les favoris de l'utilisteur
-    if(this.isFavoris(title, artiste)) return; //TODO: Enlever des favoris
+    if(this.isFavoris(title, artiste)) return;
 
     await this.http.get(environment.database.url + "favorisadd?login=" + login + "&title=" + title + "&artiste=" + artiste + "&link=" + link, {responseType: "json"}).toPromise().then((res: any) => {
+
+      console.log(res);
+      this.getFavoris(); //mis a jour des favoris
+
+    }).catch((e: any) => {
+      console.log(e);
+    })
+
+  }
+
+  /**
+   * Retire la musique des favoris favoris
+   * 
+   * @param title titre de la musique
+   * @param artiste artiste de la musique
+   */
+   async removeFavoris(title: string, artiste: string){
+    
+    let login = this._connexion.getLogin();
+
+    //Utilisateur non connecté
+    if(login == "") return;
+
+    //Le son est déjà dans les favoris de l'utilisteur
+    if(this.isFavoris(title, artiste) == false) return;
+
+    await this.http.get(environment.database.url + "favorisremove?login=" + login + "&title=" + title + "&artiste=" + artiste, {responseType: "json"}).toPromise().then((res: any) => {
 
       console.log(res);
       this.getFavoris(); //mis a jour des favoris

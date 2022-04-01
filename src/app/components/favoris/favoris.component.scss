@@ -196,3 +196,17 @@
     padding: 0;
 
 }
+
+.info span{
+    margin: 10px;
+}
+
+.retirer{
+    cursor: pointer;
+    color: #555555;
+    transition: .2s;
+}
+
+.retirer:hover{
+    color: #999999;
+}

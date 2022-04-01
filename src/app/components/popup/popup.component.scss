@@ -1,0 +1,32 @@
+#popup{
+
+    position: absolute;
+    z-index: 2999;
+    width: 50%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    color: #e5e4e4;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: .3s;
+    cursor: pointer;
+
+}
+
+#close{
+    background-image: url(https://cdn.discordapp.com/attachments/520318904170709023/938105617694982154/Cross.png);
+}
+
+.inactive-pop{
+    top: -2%;
+    opacity: 0;
+}
+
+.active-pop{
+    top: 5%;
+    opacity: 1;
+}

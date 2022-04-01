@@ -39,7 +39,7 @@
             </g>
         </svg>
 
-        <svg *ngIf="_favoris.isFavoris(songTileService.titre, songTileService.artiste) == true" version="1.0" id="coeur" class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280.000000 1189.000000" preserveAspectRatio="xMidYMid meet">
+        <svg *ngIf="_favoris.isFavoris(songTileService.titre, songTileService.artiste) == true" version="1.0" id="coeur" class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280.000000 1189.000000" preserveAspectRatio="xMidYMid meet" (click)="_favoris.removeFavoris(songTileService.titre, songTileService.artiste)">
             <g transform="translate(0.000000,1189.000000) scale(0.100000,-0.100000)" fill="#ff0000">
                 <path d="M3250 11884 c-25 -2 -106 -11 -180 -20 -1485 -172 -2704 -1295 -3001
                     -2764 -133 -660 -67 -1507 171 -2223 252 -753 675 -1411 1397 -2172 342 -360
