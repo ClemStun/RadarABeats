@@ -53,6 +53,7 @@ export class ConnexionComponent implements OnInit {
 
         this.connexionService.setLogin(pseudo);
         this._favoris.getFavoris();
+        (<HTMLInputElement>document.getElementById("condec")).innerHTML = "Deconnexion";
 
       }else{
         this.printError("error-con", res.message);
@@ -74,13 +75,13 @@ export class ConnexionComponent implements OnInit {
     let pw = (<HTMLInputElement>document.getElementById("pw-ins")).value;
     let pwc = (<HTMLInputElement>document.getElementById("pwc-ins")).value;
 
-    if(pseudo.match(/\s/) != null || pseudo == ""){
+    if(pseudo.match(/\s/) != null || pseudo == "" || pseudo == "accounts"){
       this.printError("error-ins", "Login incorrect");
       return;
     }
     
     //Check match des mot de passes
-    if(pw == pwc){
+    if(pw === pwc){
 
       //Chiffrage du mot de passe
       const pwh = sjcl.hash.sha256.hash(pw);
@@ -102,7 +103,8 @@ export class ConnexionComponent implements OnInit {
       })
       
     }else{
-      this.printError("error-ins", "Les mots de passe ne correspondent pas !");   
+      this.printError("error-ins", "Les mots de passe ne correspondent pas !");
+      return; 
     }
     
     this.resetDisplay();
@@ -118,8 +120,8 @@ export class ConnexionComponent implements OnInit {
   printError(id: string, msg: string){
 
     (<HTMLInputElement>document.getElementById(id)).innerHTML = msg;
-    (<HTMLInputElement>document.getElementById(id)).classList.add('active-err');
     (<HTMLInputElement>document.getElementById(id)).classList.remove('inactive-err');
+    (<HTMLInputElement>document.getElementById(id)).classList.add('active-err');
 
   }
 
