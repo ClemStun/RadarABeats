@@ -43,3 +43,21 @@ html, body{
 .inactive-categorie{
     left: -100%;
 }
+
+@font-face {
+    font-family: 'futuraheavy';
+    src: url('./assets/futura_heavy_font-webfont.woff2') format('woff2'),
+         url('./assets/futura_heavy_font-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'motirawregular';
+    src: url('./assets/motiraw_regular-webfont.woff2') format('woff2'),
+         url('./assets/motiraw_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
