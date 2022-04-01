@@ -38,3 +38,15 @@
     padding: 0 8%;
     padding-bottom: 5%;
 }
+
+@media screen and (max-width: 415px) {
+    #pop-up{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    #pop-up{
+        width: 70%;
+    }
+}
