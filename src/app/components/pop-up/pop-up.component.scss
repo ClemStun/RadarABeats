@@ -1,0 +1,40 @@
+#pop-up{
+    width: 40%;
+    background: #1C1C1C;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.active-popup{
+    opacity: 1;
+    margin-left: 50%;
+    transform: translate(-50%);
+    z-index: 11000;
+}
+
+.inactive-popup{
+    margin-left: 50%;
+    opacity: 0;
+    z-index: -10;
+}
+
+.titre{
+    text-transform: uppercase;
+    color: #E5E4E4;
+    margin-left: 50%;
+    transform: translate(-50%);
+    font-family: futuraheavy;
+    font-size: 28px;
+    line-height: 28px;
+    padding: 2% 0;
+}
+
+.description{
+    color: #E5E4E4;
+    font-family: 'motirawregular';
+    padding: 0 8%;
+    padding-bottom: 5%;
+}

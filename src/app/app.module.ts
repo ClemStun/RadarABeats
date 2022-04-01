@@ -15,6 +15,7 @@ import { SafePipe } from './safe.pipe';
 import { BtnConnexionComponent } from './components/btn-connexion/btn-connexion.component';
 import { ConnexionComponent } from './components/connexion/connexion.component';
 import { FavorisComponent } from './components/favoris/favoris.component';
+import { PopUpComponent } from './components/pop-up/pop-up.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FavorisComponent } from './components/favoris/favoris.component';
     SafePipe,
     BtnConnexionComponent,
     ConnexionComponent,
-    FavorisComponent
+    FavorisComponent,
+    PopUpComponent
   ],
   imports: [
     HttpClientModule,
