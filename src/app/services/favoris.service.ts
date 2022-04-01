@@ -62,4 +62,8 @@ export class FavorisService {
 
   }
 
+  resetFavorisListe(){
+    this.favorisListe = [];
+  }
+
 }

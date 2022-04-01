@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { ConnexionService } from 'src/app/services/connexion.service';
 import { FavorisService } from 'src/app/services/favoris.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { FavorisService } from 'src/app/services/favoris.service';
 
 export class FavorisComponent implements OnInit {
 
-  constructor(public _favoris: FavorisService) { }
+  constructor(public _favoris: FavorisService, public _connexion: ConnexionService) { }
 
   ngOnInit(): void { }
 

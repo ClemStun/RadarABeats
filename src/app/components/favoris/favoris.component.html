@@ -7,6 +7,10 @@
 
         <div class="titre">FAVORIS</div>
 
+        <div class="not-connected" *ngIf="_connexion.login == ''">
+                <p>Vous n'êtes pas connecté</p>
+        </div>
+
         <div class="card-container" *ngFor="let fav of _favoris.favorisListe">
 
             <div class="info">

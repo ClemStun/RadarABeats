@@ -3,11 +3,17 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
+
+/**
+ * Permet de partagé l'utilisateur connecté entre les différent component et service
+ */
 export class ConnexionService {
 
-  login: string = "";
+  login: string;
 
-  constructor() { }
+  constructor() {
+    this.login = "";
+   }
 
   getLogin(): string{
     return this.login;

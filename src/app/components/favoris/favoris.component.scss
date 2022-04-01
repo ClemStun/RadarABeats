@@ -169,3 +169,29 @@
     font-size: 20px;
     color: #CCC610;
 }
+
+.not-connected{
+
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5000;
+    width: 60%;
+    height: 60px;
+    background-color: #333333;
+    border-radius: 5px;
+    transform: translate(0%, -50%);
+
+}
+
+.not-connected p{
+    
+    color: red;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+
+}
