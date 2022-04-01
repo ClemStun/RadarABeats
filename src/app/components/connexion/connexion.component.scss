@@ -44,6 +44,7 @@
     height: 100%;
     display: flex;
     justify-content: center;
+    font-family: futuraheavy;
     align-items: center;
 
 }
@@ -85,6 +86,7 @@ input[type="text"], input[type="password"]{
     width: 75%;
     height: 50px;
     font-size: 18px;
+    font-family: 'motirawregular';
 
 }
 
@@ -158,4 +160,16 @@ form span{
 
 .active-err{
     display: flex;
+}
+
+@media screen and (max-width: 415px) {
+    #log-window{
+        width: 70%;    
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    #log-window{
+        width: 70%;
+    }
 }
