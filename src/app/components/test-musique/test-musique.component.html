@@ -18,7 +18,9 @@
     </div>
 
     <h1 class="titre1">{{songTileService.titre}}</h1>
-    <h3 class="artiste">{{songTileService.artiste}}</h3>
+    <a target="_blank" href="https://musicbrainz.org/artist/{{songTileService.artisteID}}">
+        <h3 class="artiste">{{songTileService.artiste}}</h3>
+    </a>
 
     <div>
         <a target="_blank" href="https://musicbrainz.org/artist/{{songTileService.artisteID}}"><img class="icon" src="https://cdn.discordapp.com/attachments/520318904170709023/959349871452778526/icon-artist.png"/></a>

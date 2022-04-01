@@ -26,6 +26,7 @@ export class FavorisService {
 
       if(res != []){//S'il a des favoris
         this.favorisListe = res;
+        this.favorisListe.forEach(e => e.link = "https://www.youtube.com/embed/" + e.link);
       }
 
     })
