@@ -1,0 +1,23 @@
+<div id="favoris" class="inactive-categorie">
+    <div class="recentre">
+        <div id="close-btn-favoris" class="close-btn" (click)="hideFavoris()">
+        </div>
+        <div id="close-btn-favoris" class="close-btn-mobile" (click)="hideFavorisMobile()">
+        </div>
+
+        <div class="titre">FAVORIS</div>
+
+        <div class="card-container" *ngFor="let fav of _favoris.favorisListe">
+
+            <div class="info">
+                <span class="title">{{ fav.title }}</span>
+                <span class="artiste">{{ fav.artiste }}</span>
+            </div>
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/{{ fav.link }}" frameborder="0">video youtube</iframe>
+            </div>
+
+        </div>
+
+    </div>
+</div>

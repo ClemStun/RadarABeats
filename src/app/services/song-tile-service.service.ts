@@ -12,8 +12,9 @@ export class SongTileServiceService {
   ville: string = "NO CITY"
   coordonnees: string = "0, 0"
   videoLink: string =  ""
+  videoId: string = "";
   artisteID: string = ""
-  description: string = ""
+  description: string = "Cet arstiste n'a pas de description !"
 
   //Injection du service http pour les appelles aux API
   constructor(private http:HttpClient) { }
@@ -82,7 +83,7 @@ export class SongTileServiceService {
             await this.getRandomArtists(country, this.count).then(data => {
               this.artiste = data["artists"][0]["name"];
               this.artisteID = data["artists"][0]["id"];
-              this.description = data["artists"][0]["disambiguation"];
+              this.description = data["artists"][0]["disambiguation"] == null ? "Cet artiste n'a pas de description !" : data["artists"][0]["disambiguation"];
             });
             this.ville = country;
             await this.getNumberOfSongs(this.artiste).then(data => this.count = data["count"]);
@@ -96,7 +97,7 @@ export class SongTileServiceService {
           await this.getRandomArtists(district, this.count).then(data => {
             this.artiste = data["artists"][0]["name"];
             this.artisteID = data["artists"][0]["id"];
-            this.description = data["artists"][0]["disambiguation"];
+            this.description = data["artists"][0]["disambiguation"] == null ? "Cet arstiste n'a pas de description !" : data["artists"][0]["disambiguation"];
           });
           this.ville = district;
           await this.getNumberOfSongs(this.artiste).then(data => this.count = data["count"]);
@@ -112,7 +113,7 @@ export class SongTileServiceService {
         await this.getRandomArtists(city, this.count).then(data => {
           this.artiste = data["artists"][0]["name"];
           this.artisteID = data["artists"][0]["id"];
-          this.description = data["artists"][0]["disambiguation"];
+          this.description = data["artists"][0]["disambiguation"] == null ? "Cet arstiste n'a pas de description !" : data["artists"][0]["disambiguation"];
         });
         console.log("Artist : " + this.artiste);
         this.ville = city;
@@ -133,20 +134,16 @@ export class SongTileServiceService {
 
   //Affichage de la vidéo correspondante à la musique
   async setVideoLink(){
-
-    if (this.artiste != "NO ARTIST"){
-      await this.getLinkFromArtistAndSong(this.artiste, this.titre  == "NO SONG" ? "" : this.titre).then(data => {
-        this.videoLink = 'https://www.youtube.com/embed/' + data["items"][0]["id"]["videoId"] + "?&autoplay=1";
-        console.log(data)})
-      console.log(this.videoLink);
-    }
+    await this.getLinkFromArtistAndSong(this.artiste, this.titre);
+    this.videoLink = 'https://www.youtube.com/embed/' + this.videoId + "?&autoplay=1";
   }
 
 
   //Récuperation de la vidéo correspondante à la musique trouvée 
-  getLinkFromArtistAndSong(artist: string, song: string){
-    return this.http.get<any>('https://www.googleapis.com/youtube/v3/search/?q="' + artist + ' ' + song + '"&type=video&part=snippet&key=' + environment.youtube.token, {responseType: "json"}).toPromise();
-    
+  async getLinkFromArtistAndSong(artist: string, song: string){
+    await this.http.get<any>('https://www.googleapis.com/youtube/v3/search/?q="' + artist + ' ' + song + '"&type=video&part=snippet&key=' + environment.youtube.token, {responseType: "json"}).toPromise().then(data => {
+      this.videoId = data["items"][0]["id"]["videoId"];
+    });
   }
 
 

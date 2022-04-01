@@ -18,59 +18,80 @@ export class SidebarComponent implements OnInit {
   }
 
   showContacter(){
-    if((<HTMLInputElement>document.getElementById('apropos')).classList.contains('active-categorie')){
-      (<HTMLInputElement>document.getElementById('apropos')).classList.remove('active-categorie');
-      (<HTMLInputElement>document.getElementById('apropos')).classList.add('inactive-categorie');
-      (<HTMLInputElement>document.getElementById('btn-apropos')).classList.remove('text-selected');
-    }
+
+    (<HTMLInputElement>document.getElementById('apropos')).classList.remove('active-categorie');
+    (<HTMLInputElement>document.getElementById('apropos')).classList.add('inactive-categorie');
+    (<HTMLInputElement>document.getElementById('btn-apropos')).classList.remove('text-selected');
+    
+    (<HTMLInputElement>document.getElementById('favoris')).classList.remove('active-categorie');
+    (<HTMLInputElement>document.getElementById('favoris')).classList.add('inactive-categorie');
+    (<HTMLInputElement>document.getElementById('btn-favoris')).classList.remove('text-selected');
 
     (<HTMLInputElement>document.getElementById('contacter')).classList.remove('inactive-categorie');
     (<HTMLInputElement>document.getElementById('contacter')).classList.add('active-categorie');
     (<HTMLInputElement>document.getElementById('btn-contacter')).classList.add('text-selected');
+
   }
 
   showContacterMobile(){
-    if((<HTMLInputElement>document.getElementById('apropos')).classList.contains('active-categorie')){
-      (<HTMLInputElement>document.getElementById('apropos')).classList.remove('active-categorie');
-      (<HTMLInputElement>document.getElementById('apropos')).classList.add('inactive-categorie');
-      (<HTMLInputElement>document.getElementById('btn-apropos')).classList.remove('text-selected');
-    }
 
-    (<HTMLInputElement>document.getElementById('contacter')).classList.remove('inactive-categorie');
-    (<HTMLInputElement>document.getElementById('contacter')).classList.add('active-categorie');
-    (<HTMLInputElement>document.getElementById('btn-contacter')).classList.add('text-selected');
+    this.showContacter();
 
     (<HTMLInputElement>document.getElementById('sidebar')).classList.remove('active');
     (<HTMLInputElement>document.getElementById('sidebar')).classList.add('inactive');
+
   }
 
 
 
   showAPropos(){
-    if((<HTMLInputElement>document.getElementById('contacter')).classList.contains('active-categorie')){
-      (<HTMLInputElement>document.getElementById('contacter')).classList.remove('active-categorie');
-      (<HTMLInputElement>document.getElementById('contacter')).classList.add('inactive-categorie');
-      (<HTMLInputElement>document.getElementById('btn-contacter')).classList.remove('text-selected');
-    }
+
+    (<HTMLInputElement>document.getElementById('contacter')).classList.remove('active-categorie');
+    (<HTMLInputElement>document.getElementById('contacter')).classList.add('inactive-categorie');
+    (<HTMLInputElement>document.getElementById('btn-contacter')).classList.remove('text-selected');
+
+    (<HTMLInputElement>document.getElementById('favoris')).classList.remove('active-categorie');
+    (<HTMLInputElement>document.getElementById('favoris')).classList.add('inactive-categorie');
+    (<HTMLInputElement>document.getElementById('btn-favoris')).classList.remove('text-selected');
 
     (<HTMLInputElement>document.getElementById('apropos')).classList.remove('inactive-categorie');
     (<HTMLInputElement>document.getElementById('apropos')).classList.add('active-categorie');
     (<HTMLInputElement>document.getElementById('btn-apropos')).classList.add('text-selected');
+
   }
 
   showAProposMobile(){
-    if((<HTMLInputElement>document.getElementById('contacter')).classList.contains('active-categorie')){
-      (<HTMLInputElement>document.getElementById('contacter')).classList.remove('active-categorie');
-      (<HTMLInputElement>document.getElementById('contacter')).classList.add('inactive-categorie');
-      (<HTMLInputElement>document.getElementById('btn-contacter')).classList.remove('text-selected');
-    }
-
-    (<HTMLInputElement>document.getElementById('apropos')).classList.remove('inactive-categorie');
-    (<HTMLInputElement>document.getElementById('apropos')).classList.add('active-categorie');
-    (<HTMLInputElement>document.getElementById('btn-apropos')).classList.add('text-selected');
+    
+    this.showAPropos();
     
     (<HTMLInputElement>document.getElementById('sidebar')).classList.remove('active');
     (<HTMLInputElement>document.getElementById('sidebar')).classList.add('inactive');
+
+  }
+
+  showFavoris(){
+
+    (<HTMLInputElement>document.getElementById('contacter')).classList.remove('active-categorie');
+    (<HTMLInputElement>document.getElementById('contacter')).classList.add('inactive-categorie');
+    (<HTMLInputElement>document.getElementById('btn-contacter')).classList.remove('text-selected');
+
+    (<HTMLInputElement>document.getElementById('apropos')).classList.remove('active-categorie');
+    (<HTMLInputElement>document.getElementById('apropos')).classList.add('inactive-categorie');
+    (<HTMLInputElement>document.getElementById('btn-apropos')).classList.remove('text-selected');
+
+    (<HTMLInputElement>document.getElementById('favoris')).classList.remove('inactive-categorie');
+    (<HTMLInputElement>document.getElementById('favoris')).classList.add('active-categorie');
+    (<HTMLInputElement>document.getElementById('btn-favoris')).classList.add('text-selected');
+    
+  }
+
+  showFavorisMobile(){
+
+    this.showFavoris();
+
+    (<HTMLInputElement>document.getElementById('sidebar')).classList.remove('active');
+    (<HTMLInputElement>document.getElementById('sidebar')).classList.add('inactive');
+
   }
 
   constructor() { }

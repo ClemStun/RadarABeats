@@ -17,6 +17,8 @@ export class DarkerComponent implements OnInit {
     (<HTMLInputElement>document.getElementById('trigger-btn-pre')).classList.remove('invisible');
     (<HTMLInputElement>document.getElementById('log-window')).classList.remove('active-log');
     (<HTMLInputElement>document.getElementById('log-window')).classList.add('unactive-log');
+    (<HTMLInputElement>document.getElementById('error-ins')).classList.remove('active-err');
+    (<HTMLInputElement>document.getElementById('error-ins')).classList.add('inactive-err');
   }
 
   constructor() { }

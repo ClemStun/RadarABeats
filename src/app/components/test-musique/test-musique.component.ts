@@ -1,7 +1,7 @@
-import { AfterViewInit, Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Component, OnInit } from '@angular/core'
 import { CarteService } from 'src/app/services/carte.service';
 import { SongTileServiceService } from 'src/app/services/song-tile-service.service';
+import { FavorisService } from 'src/app/services/favoris.service';
 
 @Component({
   selector: 'app-test-musique',
@@ -11,13 +11,18 @@ import { SongTileServiceService } from 'src/app/services/song-tile-service.servi
 
 export class TestMusiqueComponent implements OnInit {
   
-  constructor(public songTileService: SongTileServiceService, private carteService: CarteService){ 
+  constructor(public songTileService: SongTileServiceService, private carteService: CarteService, public _favoris: FavorisService){ 
     
   }
 
   //Fonction d'affichage de la version reduite du menu vertical
   showMenu(){
     console.log("Test ShowMenu");
+
+    if((<HTMLInputElement>document.getElementById('menuUp')).classList.contains('greater')){
+      this.lowerMenu();
+    }
+
     (<HTMLInputElement>document.getElementById('menuUp')).classList.remove('inactive');
     (<HTMLInputElement>document.getElementById('menuUp')).classList.add('active');
     (<HTMLInputElement>document.getElementById('trigger-btn')).classList.add('invisible');
@@ -34,6 +39,7 @@ export class TestMusiqueComponent implements OnInit {
 
   hideMenu(){
     console.log("Test HideMenu");
+    (<HTMLInputElement>document.getElementById('menuUp')).scroll(0,-1000);
     (<HTMLInputElement>document.getElementById('menuUp')).classList.remove('active');
     (<HTMLInputElement>document.getElementById('menuUp')).classList.add('inactive');
     (<HTMLInputElement>document.getElementById('close-btn')).classList.add('invisible');
@@ -99,7 +105,7 @@ export class TestMusiqueComponent implements OnInit {
 
   ngOnInit(): void {
 
-    //Passe le composant au service de la carte pour l'affichage du menu apres un clique sur la carte
+    //Passe le composant au service de la carte pour l'affichage du menu apres un clique sur la carte    
     this.carteService.setComp(this);
 
   }

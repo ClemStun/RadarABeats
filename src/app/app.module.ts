@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SafePipe } from './safe.pipe';
 import { BtnConnexionComponent } from './components/btn-connexion/btn-connexion.component';
 import { ConnexionComponent } from './components/connexion/connexion.component';
+import { FavorisComponent } from './components/favoris/favoris.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ConnexionComponent } from './components/connexion/connexion.component';
     AProposComponent,
     SafePipe,
     BtnConnexionComponent,
-    ConnexionComponent
+    ConnexionComponent,
+    FavorisComponent
   ],
   imports: [
     HttpClientModule,

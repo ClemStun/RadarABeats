@@ -6,20 +6,23 @@
         <span id="btn-ins" class="choix" (click)="setConnexion(false)">S'inscrire</span>
     </div>
 
+    
     <form id="connexion-form" class="form-c choix-connexion active-choix">
-
-        <input type="text" placeholder="E-mail">
-        <input type="password" placeholder="Mot de passe">
-        <input type="submit" value="Valider" (click)="connexion()">
-
+        
+        <span id="error-con" class="inactive-err"></span>
+        <input id="pseudo-con" type="text" placeholder="Pseudo">
+        <input id="pw-con" type="password" placeholder="Mot de passe">
+        <input type="button" value="Valider" (click)="connexion()">
+        
     </form>
-
+    
     <form id="enregistrer-form" class="form-c choix-inscription">
-
-        <input type="text" placeholder="E-mail">
-        <input type="password" placeholder="Mot de passe">
-        <input type="password" placeholder="Confirmation mot de passe">
-        <input type="submit" value="Valider" (click)="inscription()">
+        
+        <span id="error-ins" class="inactive-err"></span>
+        <input id="pseudo-ins" type="text" placeholder="Pseudo">
+        <input id="pw-ins" type="password" placeholder="Mot de passe">
+        <input id="pwc-ins" type="password" placeholder="Confirmation mot de passe">
+        <input type="button" value="Valider" (click)="inscription()">
 
     </form>
 

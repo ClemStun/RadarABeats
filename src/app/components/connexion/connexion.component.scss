@@ -3,7 +3,6 @@
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 5000;
     width: 40%;
     height: 50%;
     background-color: #1c1c1c;
@@ -15,11 +14,13 @@
 }
 
 .unactive-log{
+    z-index: -1;
     opacity: 0;
     top: 80%;
 }
 
 .active-log{
+    z-index: 5000;
     top: 50%;
 }
 
@@ -67,7 +68,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 90%;
+    height: 80%;
     justify-content: space-evenly;
     align-items: center;
     transition: .3s;
@@ -91,7 +92,7 @@ input:focus{
     outline: none;
 }
 
-input[type="submit"]{
+input[type="button"]{
 
     all: unset;
     width: 75%;
@@ -137,4 +138,24 @@ input[type="submit"]{
 
 .choix-left{
     left: 0;
+}
+
+form span{
+    
+    width: 80%;
+    height: 50px;
+    color: red; //a changé !
+    background-color: #333333;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+
+}
+
+.inactive-err{
+    display: none;
+}
+
+.active-err{
+    display: flex;
 }
