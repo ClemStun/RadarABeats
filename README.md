@@ -1,6 +1,6 @@
 # Radar A Beats
 
-**Projet L3 Architectures Web et IHM**
+### **Projet L3 Architectures Web et IHM**
 
 **Groupe Utema & Stun**
 
