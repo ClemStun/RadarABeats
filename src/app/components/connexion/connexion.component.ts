@@ -60,6 +60,9 @@ export class ConnexionComponent implements OnInit {
       }else{
         this.printError("error-con", res.message);
         
+        //Reset champs connexion
+        (<HTMLInputElement>document.getElementById("pseudo-con")).value = "";
+        (<HTMLInputElement>document.getElementById("pw-con")).value = "";
       }
       
     })
