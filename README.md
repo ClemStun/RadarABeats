@@ -43,4 +43,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # Et pour les courageux qui sont arrivés jusqu'ici...
 
-Venez découvrir notre vidéo de démonstration du site : [Allez clique c'est marrant](https://www.youtube.com/watch?v=ctq0J9jCxlQ).
+Venez découvrir notre vidéo de démonstration du site : [Allez cliques c'est marrant](https://www.youtube.com/watch?v=ctq0J9jCxlQ).
