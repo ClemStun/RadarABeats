@@ -55,14 +55,14 @@ export class ConnexionComponent implements OnInit {
         this._favoris.getFavoris();
         (<HTMLInputElement>document.getElementById("condec")).innerHTML = "Deconnexion";
         this.popUp();
+        this.resetDisplay();
 
       }else{
         this.printError("error-con", res.message);
+        
       }
       
     })
-    
-    this.resetDisplay();
 
   }
 
@@ -98,6 +98,9 @@ export class ConnexionComponent implements OnInit {
 
         }else{
           this.printError("error-ins", res.message);
+          //Reset champs connexion
+          (<HTMLInputElement>document.getElementById("pseudo-con")).value = "";
+          (<HTMLInputElement>document.getElementById("pw-con")).value = "";
         }
         
         
