@@ -114,6 +114,10 @@
         text-align: center;
         margin-bottom: -.5%;
     }
+  
+    .card-container{
+        flex-direction: column;
+    }
     
 }
 
@@ -149,8 +153,8 @@
 .video{
     position: relative;
     display: flex;
-    width: 50%;
-    height: 100%;
+    width: 40%;
+    height: 50%;
     justify-content: center;
     align-items: center;
 }
