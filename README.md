@@ -9,7 +9,7 @@
 - GEORGET Louis
 - LABBE Nathan
 
-Les livrables de ce projet sont situés dans le dossier [Livrables]() de ce github.
+Les livrables de ce projet sont situés dans le fichier **"Ensemble des Liens"** en .pdf de ce github, ou en cliquant sur [Livrables]() 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
 
