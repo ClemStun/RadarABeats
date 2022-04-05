@@ -11,7 +11,7 @@
 
 Les livrables de ce projet sont situés dans le fichier **"Ensemble des Liens"** en .pdf de ce github, ou en cliquant sur [Livrables](https://github.com/ClemStun/RadarABeats/blob/master/Ensemble_des_Liens.pdf).
 
-Le projet est hebergé et complétement fonctionnel sur le site [Radar à Beats](romainlavaldev.github.io).
+Le projet est hebergé et complétement fonctionnel sur le site [Radar à Beats](https://romainlavaldev.github.io/).
 
 # Partie Angular
 
