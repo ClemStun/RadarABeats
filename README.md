@@ -1,4 +1,15 @@
-# MyApp
+# Radar A Beats
+
+**Projet L3 Architectures Web et IHM**
+
+**Groupe Utema & Stun**
+
+- COMPTE Clément
+- LAVAL Romain
+- GEORGET Louis
+- LABBE Nathan
+
+Les livrables de ce projet sont situés dans le dossier [Livrables]() de ce github.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
 
