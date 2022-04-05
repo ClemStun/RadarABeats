@@ -9,7 +9,11 @@
 - GEORGET Louis
 - LABBE Nathan
 
-Les livrables de ce projet sont situés dans le fichier **"Ensemble des Liens"** en .pdf de ce github, ou en cliquant sur [Livrables]() 
+Les livrables de ce projet sont situés dans le fichier **"Ensemble des Liens"** en .pdf de ce github, ou en cliquant sur [Livrables](https://github.com/ClemStun/RadarABeats/blob/master/Ensemble_des_Liens.pdf) 
+
+Le projet est hebergé et complétement fonctionnel sur le site [Radar à Beats](romainlavaldev.github.io)
+
+# Partie Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
 
