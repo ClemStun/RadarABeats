@@ -14,7 +14,7 @@ export class SongTileServiceService {
   videoLink: string =  ""
   videoId: string = "";
   artisteID: string = ""
-  description: string = "Cet arstiste n'a pas de description !"
+  description: string = "Cet artiste n'a pas de description !"
 
   /** Injection du service http pour les appels aux APIs
    * 
